@@ -1,0 +1,6 @@
+with java and spring boot create an entity model for create a personal portfolio composed by:
+	- Home
+	- About: Which contains information about me, the button for Hire Me, education section and experience section,
+	- Service: Which contains my service like java developer, angular developer, html and css developer, data base developer,
+	- Portfolio: Which contains all my projects,
+	- Contact: Which contains my phone number, my email, my website, my linkedIn profile, my github profile, and one section with form for contact me and 		   send me email.
