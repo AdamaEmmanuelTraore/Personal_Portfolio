@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Table(name = "section")
+@Table(name = "portfolio")
 @Data
-public class Section {
+public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,22 +36,7 @@ public class Section {
             CascadeType.REFRESH,
             CascadeType.DETACH
     })
-    @JoinColumn(name = "category_id", nullable = false)
-    private SectionCategory sectionCategory;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "section")
-    private List<Portfolio> portfolios;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "section")
-    private List<Hobby> hobbies;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "section")
-    private List<AcademyExperience> academyExperiences;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "section")
-    private List<WorkExperience> workExperiences;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "section")
-    private List<FileCv> fileCvs;
+    @JoinColumn(name = "section_id", nullable = false)
+    private Section section;
 
 }

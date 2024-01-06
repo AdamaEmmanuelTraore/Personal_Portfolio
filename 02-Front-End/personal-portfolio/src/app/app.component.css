@@ -1,0 +1,8 @@
+.sideNav {
+    width: 320px;
+    background: hsl(0 0% 100% / 0.1);
+}
+
+.main-content {
+    position: relative;
+}

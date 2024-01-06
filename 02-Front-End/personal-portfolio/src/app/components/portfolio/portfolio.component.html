@@ -1,0 +1,26 @@
+<!-- ===== Portfolio Section Card ===== -->
+<section class="portfolio section">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>About Me</h2>
+            </div>
+            <div class="card-container">
+                <div class="card" *ngFor="let portfolio of portfolios">
+                    <div class="front item-a">
+                        <img class="blog-img" src="{{ portfolio.image_url }}" />
+                        <h1>{{ portfolio.title }}</h1>
+                    </div>
+                    <div class="back">
+                        <div class="text-overlay">
+                            <p><b>Methodology : </b>{{ portfolio.methode }}</p><br>
+                            <p><b>Objective : </b>{{ portfolio.objective }}</p>
+                        </div>
+                        <a class="anchor-tag" routerLink="/section-category/PORTFOLIO/{{portfolio.id}}">Get more
+                            details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,9 +1,6 @@
 package com.tae4solution.personalportfolio.config;
 
-import com.tae4solution.personalportfolio.entity.Experience;
-import com.tae4solution.personalportfolio.entity.FileCv;
-import com.tae4solution.personalportfolio.entity.Section;
-import com.tae4solution.personalportfolio.entity.SectionCategory;
+import com.tae4solution.personalportfolio.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,23 +30,30 @@ public class PersonalPortfolioRestConfig implements RepositoryRestConfigurer {
 
         HttpMethod[] theUnsupportedActions = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE };
 
-        // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "Section", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
-        config.getExposureConfiguration()
-                .forDomainType(Section.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
-
         // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "SectionCategory", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
         config.getExposureConfiguration()
                 .forDomainType(SectionCategory.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
-        // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "Experience", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
+        // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "Section", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
         config.getExposureConfiguration()
-                .forDomainType(Experience.class)
+                .forDomainType(Section.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+
+        // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "AcademyExperience", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
+        config.getExposureConfiguration()
+                .forDomainType(AcademyExperience.class)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+
+        // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "WorkExperience", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
+        config.getExposureConfiguration()
+                .forDomainType(WorkExperience.class)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+
 
         // DISATTIVARE I METODI HTTP DELLA SEGUENTE REPOSITORY "FileCv", PER RENDERLO DI SOLA LETTURA: PUT, POST E DELETE
         config.getExposureConfiguration()

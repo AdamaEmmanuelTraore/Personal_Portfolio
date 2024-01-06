@@ -19,5 +19,6 @@ public class SectionCategory {
     private String sectionName;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "sectionCategory")
-    private List<Section> sections;
+    private List<Section> section;
+
 }

@@ -1,0 +1,24 @@
+/* content.component.css */
+  
+  .content-sections {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .short-paragraph {
+    width: 30%;
+  }
+  
+  .long-paragraph {
+    width: 65%;
+  }
+  
+  .photo {
+    margin-top: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  

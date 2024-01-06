@@ -1,0 +1,169 @@
+/*
+   ============
+       HOME
+   ============
+*/
+.home {
+  min-height: 100vh;
+  display: flex;
+  color: var(--text-black-900);
+}
+
+.home .home-info {
+  flex: 50%;
+}
+
+h3.hello {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+h3.hello span {
+  font-family: 'Clicker Script', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--skin-color);
+}
+
+h3.my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.typing {
+  color: var(--skin-color);
+}
+
+.home-info p {
+  margin-bottom: 70px;
+  font-size: 20px;
+  color: var(--text-black-700);
+}
+
+.home .home-img {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.home-img::after {
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-bottom: 10px solid var(--skin-color);
+  border-right: 10px solid var(--skin-color);
+  right: 4px;
+  bottom: -40px;
+}
+
+.home-img::before {
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-top: 10px solid var(--skin-color);
+  border-left: 10px solid var(--skin-color);
+  left: 4px;
+  top: -40px;
+}
+
+.border {
+  width: 290px;
+  height: 369px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+
+  &:hover {
+    border: 1px solid white;
+  }
+}
+
+.card {
+  width: 300px;
+  height: 379px;
+  background: grey;
+  border-radius: 10px;
+  transition-duration: 0.8s;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card0 {
+  background: url('/assets/Photo/traore_adama_emmanuel_photo.jpeg') bottom center no-repeat;
+  background-size: 300px;
+
+  &:hover {
+    background: url('/assets/Photo/traore_adama_emmanuel_photo.jpeg') left center no-repeat;
+    background-size: 620px;
+  }
+
+  .fa {
+    opacity: 1;
+  }
+}
+
+.icons {
+  font-size: 25px;
+  width: 50px;
+  height: 130px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttons-home-about {
+  text-align: center;
+}
+
+@media screen and (max-width: 725px) {
+  .home-img {
+    display: flex;
+    flex: column;
+    justify-content: center;
+  }
+
+  .home .home-img {
+    position: relative;
+    margin-bottom: 65px;
+  }
+
+  .buttons-home-about {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .home-img::after {
+    content: '';
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    right: 4px;
+    bottom: -40px;
+  }
+
+  .home-img::before {
+    content: '';
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: 4px;
+    top: -40px;
+  }
+
+  .home .home-info {
+    margin-top: 30px;
+  }
+}

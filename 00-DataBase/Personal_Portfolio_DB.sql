@@ -26,6 +26,8 @@ AUTO_INCREMENT = 1;
 CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`section` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) DEFAULT NULL,
+  `methode` VARCHAR(255) DEFAULT NULL,
+  `objective` VARCHAR(255) DEFAULT NULL,
   `description` TEXT DEFAULT NULL,
   `image_url` VARCHAR(255) DEFAULT NULL,
   `category_id` BIGINT(20) NOT NULL,
@@ -37,9 +39,45 @@ ENGINE=InnoDB
 AUTO_INCREMENT = 1;
 
 -- -----------------------------------------------------
--- Table `Personal_Portfolio`.`experience`
+-- Table `Personal_Portfolio`.`portfolio`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`experience` (
+CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`portfolio` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) DEFAULT NULL,
+  `methode` VARCHAR(255) DEFAULT NULL,
+  `objective` VARCHAR(255) DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `image_url` VARCHAR(255) DEFAULT NULL,
+  `section_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_section1` (`section_id`),
+  CONSTRAINT `fk_section1` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
+) 
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+-- -----------------------------------------------------
+-- Table `Personal_Portfolio`.`hobby`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`hobby` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) DEFAULT NULL,
+  `methode` VARCHAR(255) DEFAULT NULL,
+  `objective` VARCHAR(255) DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `image_url` VARCHAR(255) DEFAULT NULL,
+  `section_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_section2` (`section_id`),
+  CONSTRAINT `fk_section2` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
+) 
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+-- -----------------------------------------------------
+-- Table `Personal_Portfolio`.`academy_experience`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`academy_experience` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) DEFAULT NULL,
   `start_date` VARCHAR(255) DEFAULT NULL,
@@ -48,8 +86,26 @@ CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`experience` (
   `description` TEXT DEFAULT NULL,
   `section_id` BIGINT(20) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_section1` (`section_id`),
-  CONSTRAINT `fk_section1` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
+  KEY `fk_section3` (`section_id`),
+  CONSTRAINT `fk_section3` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
+) 
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+-- -----------------------------------------------------
+-- Table `Personal_Portfolio`.`work_experience`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`work_experience` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) DEFAULT NULL,
+  `start_date` VARCHAR(255) DEFAULT NULL,
+  `end_date` VARCHAR(255) DEFAULT NULL,
+  `address` VARCHAR(255) DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `section_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_section4` (`section_id`),
+  CONSTRAINT `fk_section4` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
 ) 
 ENGINE=InnoDB
 AUTO_INCREMENT = 1;
@@ -63,8 +119,8 @@ CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`fileCv` (
   `data` LONGBLOB DEFAULT NULL,
   `section_id` BIGINT(20) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_section2` (`section_id`),
-  CONSTRAINT `fk_section2` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
+  KEY `fk_section5` (`section_id`),
+  CONSTRAINT `fk_section5` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
 ) 
 ENGINE=InnoDB
 AUTO_INCREMENT = 1;
@@ -77,6 +133,7 @@ INSERT INTO section_category(section_name) VALUES ('HOME');
 INSERT INTO section_category(section_name) VALUES ('ABOUT');
 INSERT INTO section_category(section_name) VALUES ('PORTFOLIO');
 INSERT INTO section_category(section_name) VALUES ('HOBBY');
+INSERT INTO section_category(section_name) VALUES ('CONTACT');
 
 
 -- -----------------------------------------------------
@@ -108,20 +165,20 @@ fascinated me and introduced me to the vast world of Object Oriented Programming
 pushes me to improve myself day after day.', 2);
 
 -- -----------------------------------------------------
--- ABOUT EXPERIENCE
+-- ABOUT ACADEMY EXPERIENCE
 -- -----------------------------------------------------
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('High school diploma as an electrotechnical expert - ITIS Enrico Mattei', 
 'September 2011', 'June 2019', 'Via Martiri Cefalonia, 46, 20097 - San Donato Milanese, Italy', 
 'High school for electrician technicians, where you study the behavior of electric current 
 in our systems, and the best way to wire them following ISO rules. For wiring,
 sometimes complex wiring diagrams must be followed.', 2);
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Higher Technician - Lombardy Higher Technical Institute of Mechatronics Foundation', 
 'September 2019', 'September 2020', 'Viale Matteotti 425 -Sesto San Giovanni, Milan,
 Italy', 'Advanced training in railway vehicle maintenance and roads, a journey that 
 then led me to make a BIG choice in my life.', 2);
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Java Full stack Web and Android - Istituto Tecnico Superiore Angelo Rizzoli', 
 'September 2021', 'July 2022', 'Via Benigno Crespi, 30 - 20159 - Milan, Italy',
 'Specialization courses in computer programming like web and java developer for industry 4.0, 
@@ -132,17 +189,21 @@ and methods, Java application development, data and database management, Web tec
 user interface and backend. -end, Android mobile apps, Industry 4.0, IoT (Internet of Things), 
 business lab - project work, English and communication skills, teamwork, soft skills, problem 
 solving, Health and Safety at work.', 2);
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+
+-- -----------------------------------------------------
+-- ABOUT WORK EXPERIENCE
+-- -----------------------------------------------------
+INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Electrician (internship) - Raineri Marco Impianti elettrici', 'January 2018', 'February 2018', 
 'Milan, Italy', 'School internship of about a month, with an electrician
 expert who allowed me to broaden my knowledge thanks to his expertise in the sector.', 2);
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Worker - Romanino srl', 'May 2019', 'August 2021', 'Via Vincenzo Toffetti 125 
 bis - 20139 Milan, Italy.', 'A seasonal job i did while studying how i taught myself the basics 
 of computer science and i was also preparing myself to pass the ITS entrance test, i was 
 the employee who yes he was responsible for loading and unloading goods in the food company
 Romanino srl.', 2);
-INSERT INTO experience(title, start_date, end_date, address, description, section_id) 
+INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Software engineer - Siemens', 'March 2022', 'Current', 'Via Vipiteno, 4 - 20138 Milan, Italy.', 
 'I work as a Front-end developer in the "smart infrastructure" division of the multinational Siemens, 
 we use the agile methodology, SCRUM. The skills acquired during this experience are the creation 
@@ -168,10 +229,18 @@ INSERT INTO fileCv(name, data, section_id)
 VALUES ('Italian - Adama Emmanuel Traore CV', 'assets/Cv/ITA - Adama Emmanuel Traore CV.pdf', 2);
 
 -- -----------------------------------------------------
--- PORTFOLIO
+-- SECTION PORTFOLIO
 -- -----------------------------------------------------
-INSERT INTO section(title, description, category_id) 
-VALUES ('My personal portfolio', '1. Database design: I started by designing the database for the 
+INSERT INTO section(title, category_id)
+VALUES ('Portfolio', 3);
+
+-- -----------------------------------------------------
+-- PORTFOLIO //
+-- -----------------------------------------------------
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My personal portfolio', 'WatherFall (cascade).', 'Design a personal portfolio site using Java 
+& Spring Boot for the backend, Angular for the frontend and MySql Workbench as the Database, here is a 
+step by step guide to get started:', '1. Database design: I started by designing the database for the 
 portfolio site. I identified the main entities, such as information on academic and work experiences, 
 projects, an About section where i put all the information about myself, and so on. Create database 
 tables corresponding to these entities and define the relationships between them.
@@ -198,24 +267,39 @@ page, etc... Then i use Angular routing to navigate between the different pages.
 Spring Boot backend. For example, i call the API to get data saved in a Database.
 10. Data Presentation: I used Angular directives to present the data obtained from the backend in 
 the frontend. For example, i can use *ngFor to iterate over a list of projects and display the 
-corresponding information.', 3);
+corresponding information.', 'assets/Photo/DB_Schema.png', 3);
+
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My XXXXXX', 'XXXXXXXXXXXXX', 'XXXXXXXXXX', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 
+'assets/Photo/DB_Schema.png', 3);
+
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My YYYYYYYYYYY', 'YYYYYYYYYYYYYYYYYY', 'YYYYYYYYYYY', 
+'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY', 
+'assets/Photo/DB_Schema.png', 3);
+
+-- -----------------------------------------------------
+-- SECTION HOBBY
+-- -----------------------------------------------------
+INSERT INTO section(title, category_id)
+VALUES ('Hobby', 4);
 
 -- -----------------------------------------------------
 -- HOBBY
 -- -----------------------------------------------------
-INSERT INTO section(title, description, image_url, category_id) 
+INSERT INTO hobby(title, description, image_url, section_id) 
 VALUES ('Football', 'A sport that i have practiced for years at a competitive level, an activity 
 that i greatly enjoy because it keeps me fit and makes a group of people collaborate to achieve, 
 in an elaborate way, a specific end goal.', 'assets/Photo/Football.jpeg', 4);
-INSERT INTO section(title, description, image_url, category_id) 
+INSERT INTO hobby(title, description, image_url, section_id) 
 VALUES ('Cycling', 'I started to appreciate this discipline in 2021, during COVID-19, because in 
 addition to doing physical activity, it is a good method to free the mind and feel part of nature.', 
 'assets/Photo/Cycling.jpeg', 4);
-INSERT INTO section(title, description, image_url, category_id) 
+INSERT INTO hobby(title, description, image_url, section_id) 
 VALUES ('Gaming PC', 'I like gaming PCs, they are huge and powerful, i like to see how they are 
 assembled on a hardware level and how they behave on a software level. I do activities like 
 studying, programming and of course playing', 'assets/Photo/PC_gaming.jpeg', 4);
-INSERT INTO section(title, description, image_url, category_id) 
+INSERT INTO hobby(title, description, image_url, section_id) 
 VALUES ('The box', 'It is an activity that I have not practiced yet, but that i have always liked, 
 it is a sport that allows you to maintain shape, but also makes you learn the values of self-control 
 and many other values. It is probably a sport i would like to do in the future.', 

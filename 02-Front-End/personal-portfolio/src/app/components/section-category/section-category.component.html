@@ -1,0 +1,31 @@
+<!-- ===== MENU SIDEBAR ===== -->
+<!---->
+<aside class="aside">
+    <div class="logo">
+        <a href="#">
+            <img src="assets/Photo/logo.png" alt="portfolio" class="img-responsive">
+        </a>
+    </div>
+    <div class="nav-toggler">
+        <span></span>
+    </div>
+    <ul class="nav">
+        <!-- ===== HOME ===== -->
+        <li *ngFor="let section of sectionCategory">
+            <!-- ===== QUI USO "routerLink" PER COLLEGARE / LINKARE IL ROUTER ===== -->
+            <a routerLink="/section-category/{{section.sectionName}}" routerLinkActive="active-link">
+                <i [ngSwitch]="section.id">
+                    <fa-icon [icon]="faHouseChimney" *ngSwitchCase="1"
+                        style="font-size: 20px; margin-right: 20px;"></fa-icon>
+                    <fa-icon [icon]="faUser" *ngSwitchCase="2" style="font-size: 20px; margin-right: 20px;"></fa-icon>
+                    <fa-icon [icon]="faBriefcase" *ngSwitchCase="3"
+                        style="font-size: 20px; margin-right: 20px;"></fa-icon>
+                    <fa-icon [icon]="faHeart" *ngSwitchCase="4" style="font-size: 20px; margin-right: 20px;"></fa-icon>
+                    <fa-icon [icon]="faComments" *ngSwitchCase="5"
+                        style="font-size: 20px; margin-right: 20px;"></fa-icon>
+                </i>
+                {{section.sectionName}}
+            </a>
+        </li>
+    </ul>
+</aside>

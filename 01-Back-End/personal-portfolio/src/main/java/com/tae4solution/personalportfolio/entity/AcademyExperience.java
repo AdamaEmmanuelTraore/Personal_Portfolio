@@ -1,24 +1,32 @@
 package com.tae4solution.personalportfolio.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "filecv")
+@Table(name = "academy_experience")
 @Data
-public class FileCv {
+public class AcademyExperience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "title")
+    private String title;
 
-    @Column(name = "data")
-    private String data;
+    @Column(name = "start_date")
+    private String start;
+
+    @Column(name = "end_date")
+    private String end;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "description")
+    private String description;
 
     @ManyToOne(cascade = {
             CascadeType.PERSIST,

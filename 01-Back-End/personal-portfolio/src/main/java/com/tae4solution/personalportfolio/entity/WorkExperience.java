@@ -4,9 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "experience")
+@Table(name = "work_experience")
 @Data
-public class Experience {
+public class WorkExperience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +36,5 @@ public class Experience {
     })
     @JoinColumn(name = "section_id", nullable = false)
     private Section section;
+
 }
