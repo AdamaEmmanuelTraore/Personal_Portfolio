@@ -10,15 +10,22 @@
   }
   
   .long-paragraph {
-    width: 65%;
+    width: 100%;
   }
-  
+
   .photo {
-    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 20px;
   }
-  
+
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
   }
   
+  h5, h3 {
+    margin: 0px;
+  }

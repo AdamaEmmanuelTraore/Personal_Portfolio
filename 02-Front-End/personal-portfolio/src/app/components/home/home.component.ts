@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private typedStrings(): void {
     // ===== HOME PAGE INFO AUTO TYPED ===== //
     this.typed = new Typed('.typing', {
-      strings: ['', 'Software engineer', 'Full-Stack Developer', 'Sport enthusiast'],
+      strings: ['', 'Software engineer', 'Front End Developer', 'Sport enthusiast'],
       typeSpeed: 40,
       backSpeed: 30,
       loop: true,

@@ -3,9 +3,9 @@
         <div class="row">
             <div>
                 <div class="content">
-                    <h1>{{ portfolioDetails.title }}</h1><br>
-                    <h3>{{ portfolioDetails.methode }}</h3><br>
-                    <h5>{{ portfolioDetails.objective }}</h5><br>
+                    <h1><b>{{ portfolioDetails.title }}</b></h1><br>
+                    <h3><b>Methode: </b>{{ portfolioDetails.methode }}</h3><br> <!-- Todo: Refact this line of code -->
+                    <h5><h3><b>Details:</b><br></h3>{{ portfolioDetails.objective }}</h5><br> <!-- Todo: Refact this line of code -->
                     <div class="photo">
                         <img src="{{ portfolioDetails.image_url }}" alt="Placeholder Photo">
                     </div>

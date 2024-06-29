@@ -133,3 +133,7 @@
 .card:hover .front:after {
   background-color: #fff;
 }
+
+.portfolioLists {
+  max-width: 100%;
+}

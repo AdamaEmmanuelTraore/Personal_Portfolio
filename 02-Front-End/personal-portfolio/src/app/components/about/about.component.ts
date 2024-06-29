@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AcademyExperienceCommon } from 'src/app/common/academy-experience/academy-experience.common';
 import { FileCvCommon } from 'src/app/common/file-cv/file-cv.common';
@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
 
   section: SectionCommon = new SectionCommon(2, '', '', '', '', '');
   academyExperience: AcademyExperienceCommon[] = [];

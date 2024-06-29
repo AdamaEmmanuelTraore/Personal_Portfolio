@@ -42,7 +42,9 @@ ul {
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-    margin: 10px 10px;
+    margin: auto;
+    width: 100%;
+    padding: 100px;
     left: 270px;
     top: 0;
     right: 0;
@@ -86,12 +88,12 @@ ul {
     width: 100%;
     margin: auto;
 }
-
+/*
 .section .container {
     padding-top: 60px;
     padding-bottom: 70px;
 }
-
+*/
 .section-title {
     flex: 0 0 100%;
     max-width: 100%;
