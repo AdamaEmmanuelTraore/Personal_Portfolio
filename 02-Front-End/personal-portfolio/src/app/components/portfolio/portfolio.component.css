@@ -9,8 +9,7 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 350px;
   height: 350px;
   transform-style: preserve-3d;
@@ -38,6 +37,8 @@
 }
 
 .front {
+  height: 100%;
+  width: 100%;
   transform-style: preserve-3d;
   transition: ease all 2.3s;
   background-size: cover;
@@ -132,8 +133,4 @@
 
 .card:hover .front:after {
   background-color: #fff;
-}
-
-.portfolioLists {
-  max-width: 100%;
 }

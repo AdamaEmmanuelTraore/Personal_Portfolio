@@ -121,9 +121,16 @@ h3.my-profession {
 }
 
 .buttons-home-about {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.row {
+  padding: 100px;
+}
+
+/*
 @media screen and (max-width: 725px) {
   .home-img {
     display: flex;
@@ -167,3 +174,4 @@ h3.my-profession {
     margin-top: 30px;
   }
 }
+*/
