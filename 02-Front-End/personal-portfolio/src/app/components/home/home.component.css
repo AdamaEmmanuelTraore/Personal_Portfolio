@@ -4,6 +4,7 @@
    ============
 */
 .home {
+  margin: 300px;
   min-height: 100vh;
   display: flex;
   color: var(--text-black-900);

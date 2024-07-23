@@ -168,17 +168,6 @@ pushes me to improve myself day after day.', 2);
 -- ABOUT ACADEMY EXPERIENCE
 -- -----------------------------------------------------
 INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
-VALUES ('High school diploma as an electrotechnical expert - ITIS Enrico Mattei', 
-'September 2011', 'June 2019', 'Via Martiri Cefalonia, 46, 20097 - San Donato Milanese, Italy', 
-'High school for electrician technicians, where you study the behavior of electric current 
-in our systems, and the best way to wire them following ISO rules. For wiring,
-sometimes complex wiring diagrams must be followed.', 2);
-INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
-VALUES ('Higher Technician - Lombardy Higher Technical Institute of Mechatronics Foundation', 
-'September 2019', 'September 2020', 'Viale Matteotti 425 -Sesto San Giovanni, Milan,
-Italy', 'Advanced training in railway vehicle maintenance and roads, a journey that 
-then led me to make a BIG choice in my life.', 2);
-INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Java Full stack Web and Android - Istituto Tecnico Superiore Angelo Rizzoli', 
 'September 2021', 'July 2022', 'Via Benigno Crespi, 30 - 20159 - Milan, Italy',
 'Specialization courses in computer programming like web and java developer for industry 4.0, 
@@ -189,20 +178,21 @@ and methods, Java application development, data and database management, Web tec
 user interface and backend. -end, Android mobile apps, Industry 4.0, IoT (Internet of Things), 
 business lab - project work, English and communication skills, teamwork, soft skills, problem 
 solving, Health and Safety at work.', 2);
+INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
+VALUES ('Higher Technician - Lombardy Higher Technical Institute of Mechatronics Foundation', 
+'September 2019', 'September 2020', 'Viale Matteotti 425 -Sesto San Giovanni, Milan,
+Italy', 'Advanced training in railway vehicle maintenance and roads, a journey that 
+then led me to make a BIG choice in my life.', 2);
+INSERT INTO academy_experience(title, start_date, end_date, address, description, section_id) 
+VALUES ('High school diploma as an electrotechnical expert - ITIS Enrico Mattei', 
+'September 2011', 'June 2019', 'Via Martiri Cefalonia, 46, 20097 - San Donato Milanese, Italy', 
+'High school for electrician technicians, where you study the behavior of electric current 
+in our systems, and the best way to wire them following ISO rules. For wiring,
+sometimes complex wiring diagrams must be followed.', 2);
 
 -- -----------------------------------------------------
 -- ABOUT WORK EXPERIENCE
 -- -----------------------------------------------------
-INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
-VALUES ('Electrician (internship) - Raineri Marco Impianti elettrici', 'January 2018', 'February 2018', 
-'Milan, Italy', 'School internship of about a month, with an electrician
-expert who allowed me to broaden my knowledge thanks to his expertise in the sector.', 2);
-INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
-VALUES ('Worker - Romanino srl', 'May 2019', 'August 2021', 'Via Vincenzo Toffetti 125 
-bis - 20139 Milan, Italy.', 'A seasonal job i did while studying how i taught myself the basics 
-of computer science and i was also preparing myself to pass the ITS entrance test, i was 
-the employee who yes he was responsible for loading and unloading goods in the food company
-Romanino srl.', 2);
 INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
 VALUES ('Software engineer - Siemens', 'March 2022', 'Current', 'Via Vipiteno, 4 - 20138 Milan, Italy.', 
 'I work as a Front-end developer in the "smart infrastructure" division of the multinational Siemens, 
@@ -217,6 +207,16 @@ Back-end: Java / Spring boot (and all technologies linked to this framework),
 Databases: MySQL Workbench. Who knows, maybe one day i will be able to become Full stack by making 
 the technologies learned with commitment, perseverance and many sleepless nights available 
 to society.', 2);
+INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
+VALUES ('Worker - Romanino srl', 'May 2019', 'August 2021', 'Via Vincenzo Toffetti 125 
+bis - 20139 Milan, Italy.', 'A seasonal job i did while studying how i taught myself the basics 
+of computer science and i was also preparing myself to pass the ITS entrance test, i was 
+the employee who yes he was responsible for loading and unloading goods in the food company
+Romanino srl.', 2);
+INSERT INTO work_experience(title, start_date, end_date, address, description, section_id) 
+VALUES ('Electrician (internship) - Raineri Marco Impianti elettrici', 'January 2018', 'February 2018', 
+'Milan, Italy', 'School internship of about a month, with an electrician
+expert who allowed me to broaden my knowledge thanks to his expertise in the sector.', 2);
 
 -- -----------------------------------------------------
 -- ABOUT FILE CV
