@@ -1,13 +1,12 @@
 <!-- ===== Hobby Section ===== -->
 <section class="hobby section">
     <div class="container">
-        <div class="row">
-            <div class="section-title padd-15">
-                <h2>Hobby</h2>
-            </div>
+        <div class="section-title padd-15">
+            <h2>Hobby</h2>
+        </div>
+        <div class="row hobby-content">
             <article class="card" *ngFor="let hobby of hobbies">
-                <img class="photo" class="card__background" src={{hobby.image_url}}
-                    alt="Photo of hobbies" />
+                <img class="photo" class="card__background" src={{hobby.image_url}} alt="Photo of hobbies" />
                 <div class="card__content | flow">
                     <div class="card__content--container | flow">
                         <h2 class="card__title titles">{{hobby.title}}</h2>

@@ -1,5 +1,4 @@
 <!-- ===== Contact Section Start ===== -->
-
 <section class="contact section" id="contact">
     <div class="container">
         <div class="row">
@@ -41,47 +40,38 @@
         </div>
         <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
         <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
+        <!-- ====== Contact Form ====== -->
+        <div class="row">
+            <div class="contact-form padd-15">
+                <mat-card>
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Name</mat-label>
+                            <input matInput formControlName="name" required>
+                        </mat-form-field>
 
-        <!-- ===== Contact form Start ===== -->
-        <form (ngSubmit)="onSubmit()">
-            <div class="row">
-                <div class="contact-form padd-15">
-                    <div class="form-item col-6 padd-15">
-                        <div class="row">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name" name="name">
-                            </div>
-                        </div>
-                        <div class="form-item col-6 padd-15">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-item col-12 padd-15">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject" name="subject">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-item col-12 padd-15">
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Message" name="message"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-item col-12 padd-15">
-                            <button type="submit" class="btn">Send Message</button>
-                        </div>
-                    </div>
-                </div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" formControlName="email" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Title</mat-label>
+                            <input matInput formControlName="title" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Message</mat-label>
+                            <textarea matInput formControlName="message" rows="5" required></textarea>
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="!contactForm.valid">Submit</button>
+                    </form>
+                </mat-card>
+
             </div>
-        </form>
-        <!-- ===== Contact form End ===== -->
-
+        </div>
     </div>
 </section>
 <!-- ===== Contact Section End ===== -->

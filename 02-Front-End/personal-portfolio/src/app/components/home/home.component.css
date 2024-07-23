@@ -4,10 +4,12 @@
    ============
 */
 .home {
-  margin: 300px;
+  /*margin-top: 200px;
+  margin-bottom: 200px;
   min-height: 100vh;
   display: flex;
-  color: var(--text-black-900);
+  width: 100%;
+  padding: 20%;*/
 }
 
 .home .home-info {
@@ -122,13 +124,14 @@ h3.my-profession {
 }
 
 .buttons-home-about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 50%);
 }
 
 .row {
-  padding: 100px;
+  margin: 20%;
 }
 
 /*

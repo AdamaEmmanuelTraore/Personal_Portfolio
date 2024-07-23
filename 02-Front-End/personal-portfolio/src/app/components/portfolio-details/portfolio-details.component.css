@@ -1,40 +1,45 @@
 /* content.component.css */
-  
-  .content-sections {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .short-paragraph {
-    width: 30%;
-  }
-  
-  .long-paragraph {
-    width: 100%;
-  }
 
-  .photo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-bottom: 20px;
-  }
+.content-sections {
+  display: flex;
+  justify-content: space-between;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-  }
-  
-  h5, h3 {
-    margin: 0px;
-  }
+.short-paragraph {
+  width: 30%;
+}
 
-  .contentGroup {
-    margin: 10px;
-  }
+.long-paragraph {
+  width: 100%;
+}
 
-  .contentTitle {
-    margin-top: 10px;
-    margin-bottom: 50px;
-  }
+.photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h5,
+h3 {
+  margin: 0px;
+}
+
+.contentGroup {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 5%);
+}
+
+.contentTitle {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}

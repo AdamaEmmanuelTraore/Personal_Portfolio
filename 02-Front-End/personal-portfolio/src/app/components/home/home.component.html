@@ -1,6 +1,9 @@
 <!-- ===== Home Section ===== -->
 <section class="home active section-title-home" id="home">
     <div class="container">
+        <div class="section-title padd-15"> <!-- Riusare il componente anche in home -->
+            <h2>Home</h2>
+        </div>
         <div class="row">
             <div class="home-info padd-15 col-md-6 text-center text-md-left">
                 <h3 class="hello">{{ section.title }}<span class="name">{{ name }}</span></h3>
@@ -23,9 +26,10 @@
                     </div>
                 </div>
             </div>
+            <div class="buttons-home-about padd-15">
+                <a routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More about me!</a>
+            </div>
         </div>
-        <div class="buttons-home-about padd-15">
-            <a routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More about me!</a>
-        </div>
+        
     </div>
 </section>

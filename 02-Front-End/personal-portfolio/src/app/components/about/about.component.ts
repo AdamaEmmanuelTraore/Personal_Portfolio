@@ -35,24 +35,6 @@ export class AboutComponent implements OnInit {
     this.getCv();
   }
 
-  private getAboutSection(): void {
-    // CONTROLLA SE IL PARAMETRO ID È DISPONIBILE
-    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
-
-    if (hasCategoryId) {
-      // SE HA LA CATEGORIA ID, LEGGILO E CONVERTILO DA STRINGA A NUMERO
-      this.currentSectionId = +this.route.snapshot.paramMap.get('id')!;    // ('')!: non è nullo
-    }
-
-    this.portfolioService.getSectionId(this.currentSectionId).subscribe(data => {
-      console.log('About section = ' + JSON.stringify(data));
-      this.section = data;
-
-      // CHIAMO I DUE METODI DOPO L'INIZIALIZZAZIONE DI getAboutSection().
-
-    });
-  }
-
   public getAcademyExperience(): any {
     this.portfolioService.getAcademyExperienceSection().subscribe(data => {
       console.log('Academy experience = ' + JSON.stringify(data));
@@ -74,4 +56,21 @@ export class AboutComponent implements OnInit {
     });
   }
 
+  private getAboutSection(): void {
+    // CONTROLLA SE IL PARAMETRO ID È DISPONIBILE
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+
+    if (hasCategoryId) {
+      // SE HA LA CATEGORIA ID, LEGGILO E CONVERTILO DA STRINGA A NUMERO
+      this.currentSectionId = +this.route.snapshot.paramMap.get('id')!;    // ('')!: non è nullo
+    }
+
+    this.portfolioService.getSectionId(this.currentSectionId).subscribe(data => {
+      console.log('About section = ' + JSON.stringify(data));
+      this.section = data;
+
+      // CHIAMO I DUE METODI DOPO L'INIZIALIZZAZIONE DI getAboutSection().
+
+    });
+  }
 }
