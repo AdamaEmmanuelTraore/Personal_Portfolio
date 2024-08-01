@@ -1,6 +1,7 @@
 package com.tae4solution.personalportfolio.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,9 +18,31 @@ public class FileCv {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "data")
-    private String data;
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
+
+    @JsonIgnore
     @ManyToOne(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE,

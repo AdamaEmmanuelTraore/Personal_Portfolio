@@ -1,37 +1,27 @@
 package com.tae4solution.personalportfolio.controller;
 
-import com.tae4solution.personalportfolio.entity.EmailRequest;
+import com.tae4solution.personalportfolio.entity.ContactForm;
+import com.tae4solution.personalportfolio.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+// PER GESTIRE L'INVIO DEL FORM ALLA MAIL
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmailController {
 
     @Autowired
-    private JavaMailSender javaMailSender;
+    private EmailService emailService;
 
-    @PostMapping("/send-email")
-    public String sendEmail(@RequestBody EmailRequest emailRequest) {
-        try {
-            sendEmailMessage(emailRequest);
-            return "Email sent successfully";
-        } catch (Exception e) {
-            return "Error sending email: " + e.getMessage();
-        }
-    }
+    @PostMapping("/sendMail")
+    public void sendEmail(@RequestBody ContactForm contactForm) {
+        String subject = "New message from " + contactForm.getName() + " - " + contactForm.getTitle();
+        //  MODIFICARE QUI PER MIGLIORARE IL DESIGN
+        String body = "Name: " + contactForm.getName() + "\n" +
+                      "Email: " + contactForm.getEmail() + "\n" +
+                      "Message: " + contactForm.getMessage() + "\n\n";
 
-    private void sendEmailMessage(EmailRequest emailRequest) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo("adama.emmanuel.traore.11@gmail.com");
-        message.setSubject(emailRequest.getTitle());
-        message.setText("Name: " + emailRequest.getName() + "\nEmail: " + emailRequest.getEmail() + "\n\n" + emailRequest.getMessage());
-        javaMailSender.send(message);
+        emailService.sendSimpleEmail("adama.emmanuel.traore.11@gmail.com", subject, body);
     }
 
 }

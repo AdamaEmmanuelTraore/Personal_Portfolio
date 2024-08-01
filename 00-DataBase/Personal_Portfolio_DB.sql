@@ -1,4 +1,9 @@
-/*
+/*	FOR DELETING TABLE CONTENT
+DELETE FROM `Personal_Portfolio`.`fileCv` WHERE `id` = 11;
+*/
+/* FOR DELETING TABLE
+DROP TABLE `Personal_Portfolio`.`fileCv`;
+
 -- -----------------------------------------------------
 -- Schema Personal Portfolio
 -- -----------------------------------------------------
@@ -116,7 +121,6 @@ AUTO_INCREMENT = 1;
 CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`fileCv` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) DEFAULT NULL,
-  `data` LONGBLOB DEFAULT NULL,
   `section_id` BIGINT(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_section5` (`section_id`),
@@ -124,7 +128,6 @@ CREATE TABLE IF NOT EXISTS `Personal_Portfolio`.`fileCv` (
 ) 
 ENGINE=InnoDB
 AUTO_INCREMENT = 1;
-
 
 -- -----------------------------------------------------
 -- SECTION CATEGORIES
@@ -221,12 +224,12 @@ expert who allowed me to broaden my knowledge thanks to his expertise in the sec
 -- -----------------------------------------------------
 -- ABOUT FILE CV
 -- -----------------------------------------------------
-INSERT INTO fileCv(name, data, section_id) 
-VALUES ('English - Adama Emmanuel Traore CV', 'assets/Cv/ENG - Adama Emmanuel Traore CV.pdf', 2);
-INSERT INTO fileCv(name, data, section_id) 
-VALUES ('French - Adama Emmanuel Traore CV', 'assets/Cv/FR - Adama Emmanuel Traore CV.pdf', 2);
-INSERT INTO fileCv(name, data, section_id) 
-VALUES ('Italian - Adama Emmanuel Traore CV', 'assets/Cv/ITA - Adama Emmanuel Traore CV.pdf', 2);
+INSERT INTO fileCv(name, section_id) 
+VALUES ('CV in French', 2);
+INSERT INTO fileCv(name, section_id) 
+VALUES ('CV in Italian', 2);
+INSERT INTO fileCv(name, section_id) 
+VALUES ('CV in English', 2);
 
 -- -----------------------------------------------------
 -- SECTION PORTFOLIO

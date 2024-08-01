@@ -8,6 +8,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Repository
 @CrossOrigin("http://localhost:4200")
-@RepositoryRestResource(collectionResourceRel = "fileCvs", path = "file-cv")
 public interface FileCvRepository extends JpaRepository<FileCv, Long> {
 }
