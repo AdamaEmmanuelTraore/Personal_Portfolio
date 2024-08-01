@@ -15,11 +15,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   section: SectionCommon = new SectionCommon(1, '', '', '', '', '');
   currentSectionId: number = 1;
   typed!: Typed;
-  isMobileView: boolean = false;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
   showContent!: boolean;
   name: string = ' Traore Adama Emmanuel';
+
+  isScreenSmall: boolean = false;
 
   constructor(
     private portfolioService: PortfolioService,
@@ -33,6 +34,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.typedStrings();
+
+    this.CheckScreenWidth();
   }
 
   /* DEVO SISTEMARE QUESTO CHE MI DA PROBLEMI CON IL ROUTING NEL MENU */
@@ -40,10 +43,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.typed.destroy();
   }
 
-  /* PER PORTARE LA FOTO SOTTO IN CASO DI SCHERMO PICCOLO */
+  /* CODICE PER VERIFICARE LA LARGHEZZA DELLO SCHERMO */
   @HostListener('window:resize', ['$event'])
   public onResize(event: any): void {
-    this.isMobileView = event.target.innerWidth < 725;
+    this.CheckScreenWidth();
+  }
+
+  // VERIFICA LA LARGHEZZA DELLA FINESTRA E AGGIORNA LA VARIABILE 'isScreenSmall'.
+  public CheckScreenWidth() {
+    this.isScreenSmall = window.innerWidth <= 709;
   }
 
   private getHomeSection(): void {

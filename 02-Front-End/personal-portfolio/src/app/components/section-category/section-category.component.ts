@@ -3,7 +3,6 @@ import { SectionCategoryCommon } from 'src/app/common/section-category/section-c
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faHouseChimney, faUser, faBriefcase, faHeart, faComments } from '@fortawesome/free-solid-svg-icons'
 import { ActivatedRoute } from '@angular/router';
-import { SectionCommon } from 'src/app/common/section/section.common';
 
 @Component({
   selector: 'app-section-category',

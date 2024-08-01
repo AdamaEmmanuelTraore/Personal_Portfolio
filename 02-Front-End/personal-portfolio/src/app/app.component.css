@@ -1,8 +1,18 @@
-.sideNav {
+.main-sideNav {
+    position: absolute;
+    height: 100%;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.main-sideNav .sideNav {
     width: 320px;
     background: hsl(0 0% 100% / 0.1);
 }
-
+/*
 .main-content {
     position: relative;
 }
+    */

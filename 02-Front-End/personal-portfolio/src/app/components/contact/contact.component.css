@@ -4,34 +4,62 @@
    ===============
 */
 
+.row {
+  margin-bottom: 2rem;
+}
+
 .contact .section-title {
-  text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 15rem;
 }
 
 .contact-title {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--skin-color);
+  font-family: system-ui;
 }
 
 .contact-sub-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-size: 23px;
+  font-weight: 700;
+  font-family: system-ui;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .contact-info-item {
   text-align: center;
-  margin-bottom: 20px;
+  flex: 0 0 25%;
+  max-width: 33.3%;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-size: 20px;
 }
 
 .contact-info-item .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 20px;
+  left: 50%;
 }
 
 .contact-form {
-  max-width: 600px;
+  width: 60%;
   margin: 0 auto;
+}
+
+.nameBox {
+  width: 45%;
+  margin-right: 0.5rem;
+}
+
+.mailBox {
+  width: 45%;
 }
 
 .form-item {
@@ -45,23 +73,41 @@
   border-radius: 5px;
 }
 
-.btn {
+.submitBtn {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: var(--skin-color);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+.submitBtn:hover {
+  background-color: #00ff55;
 }
 
-.mat-card {
-  max-width: 600px;
-  margin: 2em auto;
-  padding: 1em;
+.contact-content {
+  margin: 20rem;
+}
+
+.informations {
+  float: left;
+  width: 110%;
+}
+
+.titleBox {
+  width: 99.7%;
+}
+
+.textArea {
+  width: 99.7%;
+}
+
+/* ===== Tablet style ===== */
+@media (max-width: 1213px) {
+  .contact-content {
+    margin: 2rem;
+  }
 }

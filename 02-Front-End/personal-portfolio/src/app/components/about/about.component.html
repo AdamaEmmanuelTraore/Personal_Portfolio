@@ -1,68 +1,79 @@
 <!-- ===== About Section Start ===== -->
-<section class="about section" id="about">
+<section class="about" id="about">
     <div class="container">
-        <div class="section-title padd-15"> <!-- Riusare il componente anche in home -->
+        <div class="section-title"> <!-- Riusare il componente anche in home -->
             <h2>About Me</h2>
         </div>
         <div class="row">
-            <div class="about-content padd-15">
-                <div class="row">
-                    <div class="about-text padd-15">
+            <div class="about-content">
+                <div>
+                    <div class="about-text">
                         <h3>{{ section.title }} <span>Software Engineer</span></h3>
                         <p>{{ section.description }}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="personal-info padd-15">
-                        <div class="row">
+                <div class="main-section">
+                    <div class="sections">
+                        <h3 class="title">Info</h3> <!-- ALLINEARE AL CENTRO -->
+                        <div class="info">
+
                             <div class="info-item">
-                                <p>Birthday : <span style="display: list-item;">01 June 1998</span></p>
-                            </div>
-                            <div class="info-item rightSide">
-                                <p>Profession : <span style="display: list-item;">Full-stack developer</span></p>
-                            </div>
-                            <div class="info-item">
-                                <p>Email : <span style="display: list-item;">adama.emmanuel.traore.11@gmail.com</span>
-                                </p>
-                            </div>
-                            <div class="info-item rightSide">
-                                <p>Phone : <span style="margin-bottom: 5px; display: list-item;">+41 78 261 76
-                                        60</span><span style="display: list-item;">+39 342 304 3529</span></p>
-                                <!-- SISTEMARE IL LINTING -->
-                            </div>
-                            <div class="info-item">
-                                <p>Nationality : <span
-                                        style="margin-bottom: 5px; display: list-item;">Italian</span><span
-                                        style="display: list-item;">Ivorian</span></p> <!-- AGGIUNGERE LE BANDIERE -->
-                            </div>
-                            <div class="info-item rightSide">
-                                <p>City : <span style="display: list-item;">1012 Lausanne, Switzerland.</span><br><span
-                                        style="display: list-item;">20138 Milan, Italy.</span></p>
-                                <!-- SISTEMARE IL LINTING -->
-                            </div>
-                            <div class="info-item">
-                                <p>Website : <span><b style="color: red;">Da inserire!!!</b></span></p>
+                                <div>
+                                    <p class="infos"><b>Birthday: </b> <span>01 June 1998</span></p>
+                                </div>
+                                <div>
+                                    <p class="infos"><b>Email: </b><span>adama.emmanuel.traore.11@gmail.com</span>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="infos"><b>Nationality: </b>
+                                        <span>Italian & Ivorian</span><!-- AGGIUNGERE LE BANDIERE -->
+                                </div>
+                                <div>
+                                    <p class="infos"><b>Website: </b><span><b style="color: red;">Da
+                                                inserire!!!</b></span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="language padd-15">
-                        <div class="row">
+                    <div class="info-item rightSide sections">
+                        <div>
+                            <p class="infos"><b>Profession: </b><span>Full-stack developer</span></p>
+                        </div>
+                        <div>
+                            <p class="infos"><b>Phone: </b><br>
+                                <span>+41 78 261 76 60</span><br>
+                                <span>+39 342 304 3529</span>
+                            </p>
+                            <!-- SISTEMARE IL LINTING -->
+                        </div>
+                        <div>
+                            <p class="infos"><b>City: </b><br>
+                                <span>1012 Lausanne, Switzerland.</span><br>
+                                <span>20138 Milan, Italy.</span>
+                            </p>
+                            <!-- SISTEMARE IL LINTING -->
+                        </div>
+                    </div>
+                    <div class="language sections">
+                        <div>
                             <h3 class="title">Language</h3> <!-- ALLINEARE AL CENTRO -->
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>French</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 100%;"></div>
                                     <div class="skill-percent">100%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>Italian</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 100%;"></div>
                                     <div class="skill-percent">100%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>English</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 70%;"></div>
@@ -71,24 +82,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row"> <!-- FARE *ngFor -->
-                        <div class="buttons download padd-15" *ngFor="let cv of fileCv">
-                            <a href="#" class="btn">Download {{cv.name}}</a> <!-- METTILO IN ABOUT -->
-                        </div>
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="education padd-15">
+
+
+
+                <!--
+                                    <div *ngIf="fileCv && fileCv.length > 0">
+                                        <div *ngFor="let cv of fileCv">
+                                            <div class="buttons download">
+                                                <a href="#" class="btn">Download {{cv.name}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="!fileCv || fileCv.length === 0">
+                                        <p>Nessun CV disponibile</p>
+                                    </div>-->
+
+                <div class="education-experience">
+                    <div class="education">
                         <h3 class="title">Education</h3>
-                        <div class="row">
-                            <div class="timeline-box padd-15">
+                        <div class="cvs">
+                            <div>
                                 <div class="timeline shadow-dark">
                                     <!-- ===== timeline item ===== -->
                                     <div class="timeline-item" *ngFor="let academy of academyExperience">
                                         <div class="circle-dot"></div>
                                         <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i>{{ academy.start }}
-                                            <i class="fa fa-calendar"></i>{{ academy.end }}
+                                            {{ academy.start }} - {{ academy.end }}
                                         </h3>
                                         <h4 class="timeline-title">{{ academy.title }}</h4>
                                         <h5 class="timeline-address"><i>{{ academy.address }}</i></h5>
@@ -98,17 +118,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experience padd-15">
+                    <div class="experience">
                         <h3 class="title">Experience</h3>
-                        <div class="row">
-                            <div class="timeline-box padd-15">
+                        <div class="cvs">
+                            <div>
                                 <div class="timeline shadow-dark">
                                     <!-- ===== timeline item ===== -->
                                     <div class="timeline-item" *ngFor="let work of workExperience">
                                         <div class="circle-dot"></div>
                                         <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i>{{ work.start }}
-                                            <i class="fa fa-calendar"></i>{{ work.end }}
+                                            {{ work.start }} - {{ work.end }}
                                         </h3>
                                         <h4 class="timeline-title">{{ work.title }}</h4>
                                         <h5 class="timeline-address"><i>{{ work.address }}</i></h5>
@@ -120,32 +139,32 @@
                     </div>
                     <h2 class="title">Skills</h2>
                 </div>
-                <div class="row">
-                    <div class="skills padd-15">
-                        <div class="row">
+                <div class="skill-section">
+                    <div class="skills">
+                        <div>
                             <h3 class="title">Front-end</h3>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>Angular 2+</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 95%;"></div>
                                     <div class="skill-percent">95%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>HTML / XML</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 100%;"></div>
                                     <div class="skill-percent">100%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>CSS / SCSS</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 100%;"></div>
                                     <div class="skill-percent">100%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>JavaScript / TypeScript</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 97%;"></div>
@@ -154,24 +173,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skills padd-15"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
-                        <div class="row">
+                    <div class="skills"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
+                        <div>
                             <h3 class="title">Back-end</h3> <!-- ALLINEARE AL CENTRO -->
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>Java / Springboot / Hibernate / JPA</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 80%;"></div>
                                     <div class="skill-percent">80%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>NodeJS</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 70%;"></div>
                                     <div class="skill-percent">70%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>Golang</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 1%;"></div>
@@ -180,24 +199,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skills padd-15"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
-                        <div class="row">
+                    <div class="skills"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
+                        <div>
                             <h3 class="title">Database</h3> <!-- ALLINEARE AL CENTRO -->
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>MySQL</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 90%;"></div>
                                     <div class="skill-percent">90%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>MySQL Workbench</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 100%;"></div>
                                     <div class="skill-percent">100%</div>
                                 </div>
                             </div>
-                            <div class="skill-item padd-15">
+                            <div>
                                 <h5>HEIDI</h5>
                                 <div class="progress">
                                     <div class="progress-in" style="width: 68%;"></div>
@@ -207,8 +226,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="buttons-about-contact padd-15">
-                    <a href="#contact" class="btn hire-me">Hire Me</a>
+                <div class="download-button">
+                    <div class="buttons" *ngFor="let cv of fileCv">
+                        <a class="btn" (click)="downloadFile(cv)">Download {{cv.name}}</a>
+                    </div>
+                </div>
+                <div class="buttons-about-contact">
+                    <a routerLink="/section-category/CONTACT" data-section-index="2" class="btn hire-me">Hire Me</a>
                     <!-- ALLINEARE AL CENTRO/IN BASSO E FARLO GRANDE -->
                 </div>
             </div>

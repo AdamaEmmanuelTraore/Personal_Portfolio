@@ -43,26 +43,26 @@ p {
   color: #ffffff;
 }
 
-.flow > * + * {
+.flow>*+* {
   margin-top: var(--flow-space, 1em);
 }
 
 /* CARD COMPONENT */
 
 .card {
-    display: grid;
-    place-items: center;
-    width: 80vw;
-    max-width: 21.875rem;
-    height: 28.125rem;
-    overflow: hidden;
-    border-radius: 0.625rem;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
-    margin: 10px;
-    margin-bottom: 10px;
-  }
+  display: grid;
+  place-items: center;
+  width: 80vw;
+  max-width: 21.875rem;
+  height: 28.125rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  margin: 10px;
+  margin-bottom: 10px;
+}
 
-.card > * {
+.card>* {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
@@ -81,12 +81,10 @@ p {
   align-self: flex-end;
   height: 100%;
   padding: 12% 1.25rem 1.875rem;
-  background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 0%, 0) 0%,
-    hsla(0, 0%, 0%, 0.3) 10%,
-    hsl(0, 0%, 0%) 100%
-  );
+  background: linear-gradient(180deg,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.3) 10%,
+      hsl(0, 0%, 0%) 100%);
 }
 
 .card__content--container {
@@ -96,7 +94,8 @@ p {
 .card__title {
   position: relative;
   width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  width: -moz-fit-content;
+  /* Prefijo necesario para Firefox  */
   color: #ffffff;
 }
 
@@ -129,7 +128,7 @@ p {
     transition: transform 500ms ease-in;
   }
 
-  .card__content--container > :not(.card__title),
+  .card__content--container> :not(.card__title),
   .card__button {
     opacity: 0;
     transition: transform 500ms ease-out, opacity 500ms ease-out;
@@ -156,9 +155,9 @@ p {
     transform: scale(1.3);
   }
 
-  .card:hover .card__content--container > :not(.card__title),
+  .card:hover .card__content--container> :not(.card__title),
   .card:hover .card__button,
-  .card:focus-within .card__content--container > :not(.card__title),
+  .card:focus-within .card__content--container> :not(.card__title),
   .card:focus-within .card__button {
     opacity: 1;
     transition: opacity 500ms ease-in;
@@ -176,14 +175,36 @@ p {
 }
 
 .photo {
-    width: 1920px;
-    height: 2193px
+  width: 1920px;
+  height: 2193px
 }
 
 .card__description {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .hobby-content {
-  padding-left: 20%;
+  left: 20%;
+  width: 60%;
+}
+
+/* ===== Tablet style ===== */
+@media (max-width: 1213px) {
+  .hobby-content {
+    left: 20%;
+    width: 60%;
+  }
+
+  .card {
+    display: grid;
+    place-items: center;
+    width: 20.8rem;
+    max-width: 21.875rem;
+    height: 28.125rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    margin: 10px;
+    margin-bottom: 10px;
+  }
 }

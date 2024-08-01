@@ -2,8 +2,7 @@ export class FileCvCommon {
 
   constructor(
     public id: number,
-    public name: string,
-    public data: string
+    public name: string
   ) { }
 
 }

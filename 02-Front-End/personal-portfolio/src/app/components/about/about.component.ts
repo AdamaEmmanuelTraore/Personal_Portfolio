@@ -13,11 +13,11 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class AboutComponent implements OnInit {
 
-  section: SectionCommon = new SectionCommon(2, '', '', '', '', '');
-  academyExperience: AcademyExperienceCommon[] = [];
-  workExperience: WorkExperienceCommon[] = [];
-  fileCv: FileCvCommon[] = [];
-  currentSectionId: number = 2;
+  public section: SectionCommon = new SectionCommon(2, '', '', '', '', '');
+  public academyExperience: AcademyExperienceCommon[] = [];
+  public workExperience: WorkExperienceCommon[] = [];
+  public fileCv: FileCvCommon[] = [];
+  public currentSectionId: number = 2;
 
   constructor(
     private portfolioService: PortfolioService,
@@ -32,26 +32,53 @@ export class AboutComponent implements OnInit {
 
     this.getAcademyExperience();
     this.getWorkExperience();
-    this.getCv();
+    this.getCvData();
   }
 
-  public getAcademyExperience(): any {
+  public downloadFile(cv: FileCvCommon): void {
+    let pdfUrl = '';
+
+    if (cv.name.includes('French')) {
+      pdfUrl = this.portfolioService.pdfUrls.fr;
+    } else if (cv.name.includes('Italian')) {
+      pdfUrl = this.portfolioService.pdfUrls.ita;
+    } else if (cv.name.includes('English')) {
+      pdfUrl = this.portfolioService.pdfUrls.eng;
+    } else {
+      console.error('Language not supported');
+    }
+
+    this.portfolioService.downloadPdf(pdfUrl).subscribe(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Traore_Adama_Emmanuel_CV.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }, error => {
+      console.error('Errore nel download del CV', error);
+    }
+    );
+  }
+
+  private getAcademyExperience(): void {
     this.portfolioService.getAcademyExperienceSection().subscribe(data => {
       console.log('Academy experience = ' + JSON.stringify(data));
       this.academyExperience = data;
     });
   }
 
-  public getWorkExperience(): any {
+  private getWorkExperience(): void {
     this.portfolioService.getWorkExperienceSection().subscribe(data => {
       console.log('Work experience = ' + JSON.stringify(data));
       this.workExperience = data;
     });
   }
 
-  public getCv(): any {
+  private getCvData(): void {
     this.portfolioService.getFileCv().subscribe(data => {
-      console.log('CV file = ' + JSON.stringify(data));
       this.fileCv = data;
     });
   }

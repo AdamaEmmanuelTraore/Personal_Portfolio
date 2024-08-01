@@ -3,22 +3,20 @@
 /* spinning-card.component.css */
 
 .card-container {
-  perspective: 1000px;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 10%;
 }
 
 .card {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 20rem;
+  height: 20rem;
   transform-style: preserve-3d;
   transition: transform 0.5s ease-in;
   border: 5px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  margin: 50px;
+  margin: 0.5rem;
 }
 
 .card:hover {
@@ -113,9 +111,7 @@
 .text-overlay {
   position: relative;
   background: transparent;
-  width: 80%;
-  height: 70%;
-  top: 5%;
+  margin: 5%;
   padding: 100px 10px;
   overflow: hidden;
   transition: all 450ms ease-in-out 0s;
@@ -134,4 +130,8 @@
 
 .card:hover .front:after {
   background-color: #fff;
+}
+
+@media (max-width: 1213px) {
+
 }

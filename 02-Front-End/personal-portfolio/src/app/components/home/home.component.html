@@ -1,16 +1,23 @@
 <!-- ===== Home Section ===== -->
-<section class="home active section-title-home" id="home">
+<section class="home active" id="home">
     <div class="container">
         <div class="section-title padd-15"> <!-- Riusare il componente anche in home -->
             <h2>Home</h2>
         </div>
         <div class="row">
+            <!-- info section -->
             <div class="home-info padd-15 col-md-6 text-center text-md-left">
-                <h3 class="hello">{{ section.title }}<span class="name">{{ name }}</span></h3>
-                <h3 class="my-profession">I' m a <span class="typing"></span></h3>
-                <p>{{ section.description }}</p>
+                <div>
+                    <h3 class="hello">{{ section.title }}<span class="name">{{ name }}</span></h3>
+                    <h3 class="my-profession">I' m a <span class="typing"></span></h3>
+                    <p>{{ section.description }}</p>
+                </div>
             </div>
-            <div class="home-img padd-15 col-md-6 text-center" [ngClass]="{'order-first': isMobileView}">
+            <!-- photo section -->
+            <div class="mobile-style-text" *ngIf="isScreenSmall">
+                <p>Tap the photo to visit my LinkedIn & Github profile</p>
+            </div>
+            <div class="home-img padd-15 col-md-6 text-center">
                 <div class="card card0">
                     <div class="border" (mouseover)="showContent = true" (mouseout)="showContent = false">
                         <div class="icons">
@@ -26,10 +33,11 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons-home-about padd-15">
-                <a routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More about me!</a>
-            </div>
         </div>
-        
+        <!-- button section -->
+        <div class="buttons-home-about padd-15">
+            <a routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More about me!</a>
+        </div>
+
     </div>
 </section>
