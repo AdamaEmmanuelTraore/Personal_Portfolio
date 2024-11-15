@@ -21,7 +21,7 @@
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 95.6vh;
     padding: 10%;
   }
 
@@ -169,7 +169,7 @@
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 94.4vh;
     padding: 4%;
   }
 
@@ -296,7 +296,7 @@
   .home .buttons-home-about {
     display: flex;
     justify-content: center;
-    margin-top: -12.5rem;
+    margin-top: -30%;
   }
 
 }
@@ -389,15 +389,15 @@
   .home .home-img::before {
     border-top-width: 12vh;
     border-left-width: 12vh;
-    top: -7%;
-    left: -9%;
+    top: -7.5%;
+    left: -3%;
   }
 
   .home .home-img::after {
     border-bottom-width: 12vh;
     border-right-width: 12vh;
-    bottom: -6%;
-    right: -8%;
+    bottom: -7%;
+    right: -2.5%;
   }
 
   .home .border {

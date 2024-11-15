@@ -8,30 +8,93 @@
 @media (min-width: 861px) {
 
     .main-section {
+        /*    display: flex;
+        justify-content: space-evenly;
+        /* Distribuisce le sezioni con spazio equidistante */
         display: flex;
-        justify-content: space-between; /* Distribuisce le sezioni con spazio equidistante */
+        justify-content: space-between;
+        /* Distribuisce le sezioni uniformemente */
+        gap: 20px;
     }
 
     .sections {
-        flex: 1; /* Permette alle sezioni di avere la stessa larghezza */
-        padding: 10px;
+        /*
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;*/
+        flex: 1;
+        /* Ogni sezione occupa la stessa quantità di spazio */
+        padding: 20px;
+        /* Aggiungi padding per una migliore leggibilità */
         box-sizing: border-box;
-    }
-
-    .about .row {
-        padding: 5%;
-        top: 10rem;
+        /* Assicura che il padding non influisca sulla larghezza totale */
     }
 
     .info {
         display: flex;
     }
 
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: 0;
+        width: 50%;
+    }
+
+    .split {
+        height: 100%;
+        width: fit-content;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    .left-info {
+        /*    left: 0;
+        min-width: fit-content;*/
+        display: inline-grid;
+        justify-content: center;
+        margin-right: 1rem;
+        min-width: fit-content;
+    }
+
+    .right-info {
+        /*    right: 0;
+        min-width: fit-content;*/
+        display: inline-grid;
+        justify-content: center;
+        width: max-content;
+    }
+
+    .centered {
+        display: flex;
+        justify-content: space-between;
+        /*    flex-wrap: nowrap;*/
+    }
+
+    /*
+    .sections {
+        flex: 1;
+        /* Permette alle sezioni di avere la stessa larghezza 
+        padding: 10px;
+        box-sizing: border-box;
+    }
+*/
+    .about .row {
+        padding: 12%;
+    }
+
+    /*
     .about .about-content .info-item {
         flex: 1;
         padding-right: 7%;
     }
-
+*/
     .about .about-content .about-text h3 {
         font-size: 24px;
         margin-bottom: 15px;
@@ -48,13 +111,14 @@
         line-height: 30px;
     }
 
+    /*
     .about .about-content .info-item p {
-            padding: 10px 0;
-            font-size: 16px;
-            color: var(--text-black-900);
-            border-bottom: 1px solid var(--bg-black-50);
-        }
-
+        padding: 10px 0;
+        font-size: 16px;
+        color: var(--text-black-900);
+        border-bottom: 1px solid var(--bg-black-50);
+    }
+*/
     .about .about-content .buttons {
         margin-top: 30px;
     }
@@ -69,21 +133,22 @@
     }
 
     .infos {
-        display: list-item;
+        list-style-type: circle;
+        /* Assicurati che il tipo di lista sia impostato */
+        padding-left: 20px;
+        /* Aggiungi un padding per far spazio al marker */
+        margin: 10px 0;
+        /* Eventuale margine per distanziare gli elementi */
     }
+
 
     .about .title .info {
         display: flex;
     }
 
-    .rightSide {
-        width: max-content;
-    }
-
     /* ===== LANGUAGES ===== */
     .about .about-content .language {
-        padding-right: 0%;
-        padding-left: 0%;
+        margin-right: 5rem;
     }
 
     .about .about-content .language h5 {
@@ -145,6 +210,7 @@
         margin-bottom: 30px;
         font-weight: 700;
         color: var(--text-black-900);
+        text-align: center;
     }
 
     .about .about-content .timeline {
@@ -291,6 +357,7 @@
         top: 25vh;
     }
 
+    /*
     .about .about-content .personal-info .info-item p {
         width: 12.4rem;
         font-weight: 600;
@@ -299,7 +366,7 @@
         color: var(--text-black-900);
         border-bottom: 1px solid var(--bg-black-50);
     }
-
+*/
     .cvs {
         margin-right: 1rem;
     }

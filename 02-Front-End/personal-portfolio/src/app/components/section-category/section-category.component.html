@@ -1,16 +1,15 @@
 <!-- ===== MENU SIDEBAR ===== -->
-<!---->
+<div class="nav-toggler">
+    <span></span>
+</div>
 <aside class="aside">
     <div class="logo">
         <a href="#">
             <img src="assets/Photo/logo.png" alt="portfolio" class="img-responsive">
         </a>
     </div>
-    <div class="nav-toggler">
-        <span></span>
-    </div>
     <ul class="nav">
-        <!-- ===== HOME ===== -->
+        <!-- ===== ITERO PER OGNI SEZIONE ===== -->
         <li *ngFor="let section of sectionCategory">
             <!-- ===== QUI USO "routerLink" PER COLLEGARE / LINKARE IL ROUTER ===== -->
             <a routerLink="/section-category/{{section.sectionName}}" routerLinkActive="active-link">

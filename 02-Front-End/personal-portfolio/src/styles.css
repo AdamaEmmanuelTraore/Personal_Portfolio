@@ -9,7 +9,7 @@
 }
 
 .container {
-    width: 100%;
+/*    width: 100%;*/
 }
 
 body.dark {
@@ -104,9 +104,9 @@ ul {
 }
 
 .row {
-    display: flex;
+/*    display: flex;
     flex-wrap: wrap;
-    position: relative;
+    position: relative;*/
     align-content: center;
 }
 
@@ -146,7 +146,7 @@ ul {
     }
 
     .btn {
-        margin-top: 30%;
+        margin-top: 15%;
         margin-bottom: 10%;
     }
 }
