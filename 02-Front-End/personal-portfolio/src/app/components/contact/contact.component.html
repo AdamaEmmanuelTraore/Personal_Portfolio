@@ -1,56 +1,53 @@
 <!-- ===== Contact Section Start ===== -->
-<section class="contact section" id="contact">
+<section class="contact">
     <div class="container">
-        <div class="section-title padd-15">
-            <h2>Contact Me</h2>
-        </div>
-        <div class="contact-content">
-            <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
-            <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
-            <div class="row">
-                <!-- ===== Contact info item start ====== -->
-                <div class="contact-info-item padd-15">
-                    <div class="icon">
-                        <fa-icon [icon]="faPhone"></fa-icon>
+        <div class="row">
+            <div class="content">
+                <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
+                <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
+                <div class="infos">
+                    <!-- ===== Contact info item start ====== -->
+                    <div class="contact-info-item padd-15">
+                        <div class="icon">
+                            <fa-icon [icon]="faPhone"></fa-icon>
+                        </div>
+                        <h4>Call me On</h4>
+                        <p>+92 3330545218</p>
                     </div>
-                    <h4>Call me On</h4>
-                    <p>+92 3330545218</p>
+                    <!-- ===== Contact info item end ====== -->
+                    <!-- ===== Contact info item start ====== -->
+                    <div class="contact-info-item padd-15">
+                        <div class="icon">
+                            <fa-icon [icon]="faMapLocationDot"></fa-icon>
+                        </div>
+                        <h4>Office</h4>
+                        <p>Islamabad</p>
+                    </div>
+                    <!-- ===== Contact info item end ====== -->
+                    <!-- ===== Contact info item start ====== -->
+                    <div class="contact-info-item padd-15">
+                        <div class="icon">
+                            <fa-icon [icon]="faEnvelope"></fa-icon>
+                        </div>
+                        <h4>Email</h4>
+                        <p>info@gmail.com</p>
+                    </div>
+                    <!-- ===== Contact info item end ====== -->
+                    <!-- ===== Contact info item start ====== -->
+                    <div class="contact-info-item padd-15">
+                        <div class="icon">
+                            <fa-icon [icon]="faEarthEurope"></fa-icon>
+                        </div>
+                        <h4>Website</h4>
+                        <p>www.domain.com</p>
+                    </div>
                 </div>
                 <!-- ===== Contact info item end ====== -->
-                <!-- ===== Contact info item start ====== -->
-                <div class="contact-info-item padd-15">
-                    <div class="icon">
-                        <fa-icon [icon]="faMapLocationDot"></fa-icon>
-                    </div>
-                    <h4>Office</h4>
-                    <p>Islamabad</p>
-                </div>
-                <!-- ===== Contact info item end ====== -->
-                <!-- ===== Contact info item start ====== -->
-                <div class="contact-info-item padd-15">
-                    <div class="icon">
-                        <fa-icon [icon]="faEnvelope"></fa-icon>
-                    </div>
-                    <h4>Email</h4>
-                    <p>info@gmail.com</p>
-                </div>
-                <!-- ===== Contact info item end ====== -->
-                <!-- ===== Contact info item start ====== -->
-                <div class="contact-info-item padd-15">
-                    <div class="icon">
-                        <fa-icon [icon]="faEarthEurope"></fa-icon>
-                    </div>
-                    <h4>Website</h4>
-                    <p>www.domain.com</p>
-                </div>
-                <!-- ===== Contact info item end ====== -->
-            </div>
-            <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
-            <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
-            <!-- ====== Contact Form ====== -->
-            <div class="row">
-                <div class="contact-form padd-15">
-                    <mat-card>
+                <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
+                <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
+                <!-- ====== Contact Form ====== -->
+                <div>
+                    <div class="contact-form padd-15">
                         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                             <div class="informations">
                                 <mat-form-field class="nameBox" appearance="fill">
@@ -75,11 +72,11 @@
                                 <textarea matInput formControlName="message" rows="5" required></textarea>
                             </mat-form-field><br>
 
-                            <button class="submitBtn" mat-raised-button color="primary" type="submit"
+                            <button class="btn submitBtn" type="submit"
+                                [ngStyle]="{ cursor: contactForm.valid ? 'pointer' : 'no-drop' }"
                                 [disabled]="!contactForm.valid">Submit</button>
                         </form>
-                    </mat-card>
-
+                    </div>
                 </div>
             </div>
         </div>

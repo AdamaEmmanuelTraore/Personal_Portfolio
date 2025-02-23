@@ -1,45 +1,174 @@
 /* content.component.css */
+/* ================================================== desktop style ================================================== */
+@media (min-width: 861px) {
+  /*
+  .portfolio-detail .row {
+    padding: 12%;
+  }
+*/
 
-.content-sections {
-  display: flex;
-  justify-content: space-between;
-}
+  /* == Start Tema per le card == */
+  .first__bottom__line::before,
+  .second__bottom__line::after {
+    width: 100%;
+    /* Larghezza del braccio verticale */
+    height: 10%;
+  }
 
-.short-paragraph {
-  width: 30%;
-}
+  .light .card {
+    background-color: #ffffff;
+    /* Colore di sfondo chiaro */
+    color: #000000;
+    /* Testo scuro */
+    border: 1px solid #ffffff;
+    /* Bordo opzionale */
+  }
 
-.long-paragraph {
-  width: 100%;
-}
+  .light .card__overlay,
+  .light .card__header {
+    background-color: #ffffff;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  }
 
-.photo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  margin-bottom: 20px;
-}
+  .dark .card {
+    background-color: #000000;
+    /* Colore di sfondo scuro */
+    color: #ffffff;
+    /* Testo chiaro */
+    border: 1px solid #000000;
+    /* Bordo opzionale */
+  }
 
-img {
-  width: 100%;
-  height: auto;
-}
+  .dark .card__overlay,
+  .dark .card__header {
+    background-color: #000000;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  }
 
-h5,
-h3 {
-  margin: 0px;
-}
+  /* == Fine == */
 
-.contentGroup {
-  width: 90%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 5%);
-}
+  .portfolio__detail .content {
+    justify-content: center;
+  }
 
-.contentTitle {
-  margin-top: 10px;
-  margin-bottom: 50px;
+  .short-paragraph {
+    width: 30%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cards {
+    padding: 0;
+  }
+
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .card__image {
+    width: 100%;
+    height: 72%;
+  }
+
+  .card__overlay {
+    height: 95%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: white;
+    transform: translateY(100%);
+    transition: 0.2s ease-in-out;
+  }
+
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+  }
+
+  .card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+  }
+
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+
+  .card__header-text {
+    width: 100%;
+  }
+
+  .card__title {
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .portfolio__detail .details {
+    text-align: justify;
+  }
+
+  .card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: 'MockFlowFont';
+    font-size: 0.8em;
+    color: #d7bdca;
+  }
+
+  .card__status {
+    font-size: 0.8em;
+    color: #d7bdca;
+  }
+
+  .light .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #000000;
+    text-align: justify;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .dark .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #ffffff;
+    text-align: justify;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
 }

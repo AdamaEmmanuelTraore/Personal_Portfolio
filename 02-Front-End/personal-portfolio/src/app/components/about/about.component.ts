@@ -5,6 +5,7 @@ import { FileCvCommon } from 'src/app/common/file-cv/file-cv.common';
 import { SectionCommon } from 'src/app/common/section/section.common';
 import { WorkExperienceCommon } from 'src/app/common/work-experience/work-experience.common';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about',
@@ -18,6 +19,9 @@ export class AboutComponent implements OnInit {
   public workExperience: WorkExperienceCommon[] = [];
   public fileCv: FileCvCommon[] = [];
   public currentSectionId: number = 2;
+  faSun = faSun;
+  faMoon = faMoon;
+  currentTheme: string = 'light';
 
   constructor(
     private portfolioService: PortfolioService,
@@ -33,6 +37,10 @@ export class AboutComponent implements OnInit {
     this.getAcademyExperience();
     this.getWorkExperience();
     this.getCvData();
+  }
+
+  public toggleTheme(): string {
+    return this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
   }
 
   public downloadFile(cv: FileCvCommon): void {

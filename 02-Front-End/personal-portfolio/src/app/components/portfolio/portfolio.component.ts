@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioCommon } from 'src/app/common/portfolio/portfolio.common';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,6 +12,9 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class PortfolioComponent {
 
   portfolios: PortfolioCommon[] = [];
+  faSun = faSun;
+  faMoon = faMoon;
+  currentTheme: string = 'light';
 
   constructor(
     private portfolioService: PortfolioService,
@@ -20,6 +24,10 @@ export class PortfolioComponent {
 
   ngOnInit(): void {
     this.getPortfolioSection();
+  }
+
+  public toggleTheme(): string {
+    return this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
   }
 
   private getPortfolioSection(): void {

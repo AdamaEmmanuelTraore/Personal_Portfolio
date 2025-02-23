@@ -10,7 +10,7 @@
     </div>
     <ul class="nav">
         <!-- ===== ITERO PER OGNI SEZIONE ===== -->
-        <li *ngFor="let section of sectionCategory">
+        <li *ngFor="let section of sections">
             <!-- ===== QUI USO "routerLink" PER COLLEGARE / LINKARE IL ROUTER ===== -->
             <a routerLink="/section-category/{{section.sectionName}}" routerLinkActive="active-link">
                 <i [ngSwitch]="section.id">

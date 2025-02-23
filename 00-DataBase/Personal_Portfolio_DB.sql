@@ -281,6 +281,21 @@ VALUES ('My YYYYYYYYYYY', 'YYYYYYYYYYYYYYYYYY', 'YYYYYYYYYYY',
 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY', 
 'assets/Photo/DB_Schema.png', 3);
 
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My AAAAAAAAAA', 'AAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAA', 
+'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 
+'assets/Photo/DB_Schema.png', 3);
+
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My BBBBB BBBBBBB', 'BBBBBBBBBB', 'BBBBBBBBBBBBBBBBBBBBBB', 
+'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', 
+'assets/Photo/DB_Schema.png', 3);
+
+INSERT INTO portfolio(title, methode, objective, description, image_url, section_id)
+VALUES ('My CCCCCCC C', 'CC', 'CCCCCCCCCCCCC', 
+'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC CCCCCCCCCCCCCCCCCCC CCC CCCCCC', 
+'assets/Photo/DB_Schema.png', 3);
+
 -- -----------------------------------------------------
 -- SECTION HOBBY
 -- -----------------------------------------------------

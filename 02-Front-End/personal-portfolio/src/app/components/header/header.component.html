@@ -1,0 +1,15 @@
+<div class="header-container" [ngClass]="currentTheme"> <!-- Riusare il componente anche in home -->
+    <div class="title_frame section-title">
+        <h2>{{ selectedTitle }}</h2>
+        <div class="first__bottom__line"></div>
+        <div class="second__bottom__line"></div>
+    </div>
+    <div class="theme">
+        <ng-container *ngIf="currentTheme === 'light'; else other">
+            <button class="isDark" (click)="toggleTheme()"><fa-icon class="isSun" [icon]="faSun"></fa-icon></button>
+        </ng-container>
+        <ng-template #other>
+            <button class="isLight" (click)="toggleTheme()"><fa-icon [icon]="faMoon" class="isMoon"></fa-icon></button>
+        </ng-template>
+    </div>
+</div>

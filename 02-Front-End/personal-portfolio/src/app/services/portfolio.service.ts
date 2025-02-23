@@ -39,6 +39,23 @@ export class PortfolioService {
     );
   }
 
+  // ACCESSO AI TITOLI
+  getTitleBySection(section: string): Observable<string> {
+    return this.getAllSectionCategory().pipe(
+      map((sections) => {
+        const matchedSection = sections.find((sec) => sec.sectionName.toUpperCase() === section.toUpperCase());
+        return matchedSection ? matchedSection.sectionName : 'Unknown Section';
+      })
+    );
+  }
+
+
+  // GET SECTION CATEGORY SERVICE BY ID TODO: se non serve togli
+  public getSectionCategoryId(id: number): Observable<SectionCategoryCommon> {
+    const url = `${this.sectionCategoryUrl}/${id}`; // Assuming API supports this URL pattern
+    return this.httpClient.get<SectionCategoryCommon>(url);
+  }
+
   // GET SECTION SERVICE
   public getSection(): Observable<SectionCommon[]> {
     return this.httpClient.get<GetSectionCommon>(this.baseUrl).pipe(

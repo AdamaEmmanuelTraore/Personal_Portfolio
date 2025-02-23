@@ -1,28 +1,23 @@
-<!-- ===== Portfolio Section Card ===== -->
-<section class="portfolio section">
-    <div class="container">
-        <div>
-            <div class="section-title padd-15">
-                <h2>Portfolio</h2>
+<!-- ===== Start Portfolio Section ===== -->
+<container class="container" [ngClass]="currentTheme">
+    <content class="content">
+        <div class="content__width">
+            <div class="buttons-portfolio">
+                <a routerLink="/section-category/CONTACT" data-section-index="2" class="btn">Contact me!</a>
+                <!-- ALLINEARE AL CENTRO/IN BASSO E FARLO GRANDE -->
             </div>
-            <div class="row">
-                <div class="card-container">
-                    <div class="card" *ngFor="let portfolio of portfolios">
-                        <div class="front item-a">
-                            <h1>{{ portfolio.title }}</h1>
-                        </div>
-                        <div class="back">
-                            <div class="text-overlay">
-                                <p><b>Methodology: </b>{{ portfolio.methode }}</p><br>
-                                <p><b>Objective: </b>{{ portfolio.objective }}</p>
-                                <!--    <p><img class="blog-img" src="{{ portfolio.image_url }}" /></p> -->
-                            </div>
-                            <a class="anchor-tag" routerLink="/section-category/PORTFOLIO/{{portfolio.id}}">Get more
-                                details</a>
-                        </div>
+            <div class="card-container">
+                <div class="card" *ngFor="let portfolio of portfolios">
+                    <div class="front item-a">
+                        <h1>{{ portfolio.title }}</h1>
+                    </div>
+                    <div class="back">
+                        <a class="anchor-tag" routerLink="/section-category/PORTFOLIO/{{portfolio.id}}">Get more
+                            details</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </content>
+</container>
+<!-- ===== End Portfolio Section ===== -->

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioCommon } from 'src/app/common/portfolio/portfolio.common';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-portfolio-details',
@@ -12,6 +13,9 @@ export class PortfolioDetailsComponent {
 
   portfolioDetails: PortfolioCommon = new PortfolioCommon(1, '', '', '', '', '');
   currentId: number = 1;
+  faSun = faSun;
+  faMoon = faMoon;
+  currentTheme: string = 'light';
 
   constructor(
     private portfolioService: PortfolioService,
@@ -23,6 +27,10 @@ export class PortfolioDetailsComponent {
     this.route.paramMap.subscribe(() => {
       this.getPortfolioSectionId();
     });
+  }
+
+  public toggleTheme(): string {
+    return this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
   }
 
   private getPortfolioSectionId(): void {

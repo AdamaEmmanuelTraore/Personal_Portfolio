@@ -1,32 +1,27 @@
 <!-- ===== Home Section ===== -->
-<section class="home active" id="home">
-    <div class="container">
-        <div class="section-title padd-15"> <!-- Riusare il componente anche in home -->
-            <h2>Home</h2>
-        </div>
-        <div class="row">
-            <!-- info section -->
-            <div class="home-info padd-15 col-md-6 text-center text-md-left">
-                <div>
-                    <h3 class="hello">{{ section.title }}<span class="name">{{ name }}</span></h3>
-                    <h3 class="my-profession">I' m a <span class="typing"></span></h3>
-                    <p>{{ section.description }}</p>
-                </div>
+<div class="container">
+    <content class="content">
+        <div class="content-row">
+            <div class="text">
+                <h3 class="hello">{{ section.title }}<span class="name">{{ name }}</span></h3>
+                <h3 class="my-profession">I' m a <span class="typing"></span></h3>
+                <p class="info">{{ section.description }}</p>
             </div>
-            <!-- photo section -->
+
             <div class="mobile-style-text" *ngIf="isScreenSmall">
                 <p>Tap the photo to visit my LinkedIn & Github profile</p>
             </div>
-            <div class="home-img padd-15 col-md-6 text-center">
+            <div class="photo__frame">
+                <div class="left"></div>
+                <div class="right"></div>
                 <div class="card card0">
                     <div class="border" (mouseover)="showContent = true" (mouseout)="showContent = false">
-                        <div class="icons">
-                            <a href=" https://github.com/AdamaEmmanuelTraore" target="_blank" rel="noopener noreferrer"
-                                [hidden]="!showContent">
+                        <div class="icons" *ngIf="showContent">
+                            <a href=" https://github.com/AdamaEmmanuelTraore" target="_blank" rel="noopener noreferrer">
                                 <fa-icon class="fa" [icon]="faGithub"></fa-icon>
                             </a>
                             <a href=" https://linkedin.com/in/adama-emmanuel-traore-bb1a18230/" target="_blank"
-                                rel="noopener noreferrer" [hidden]="!showContent">
+                                rel="noopener noreferrer">
                                 <fa-icon class="fa" [icon]="faLinkedin"></fa-icon>
                             </a>
                         </div>
@@ -34,10 +29,10 @@
                 </div>
             </div>
         </div>
-        <!-- button section -->
-        <div class="buttons-home-about padd-15">
-            <a routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More about me!</a>
+        <div class="home__btn__about">
+            <button routerLink="/section-category/ABOUT" data-section-index="1" class="btn hire-me">More
+                about
+                me!</button>
         </div>
-
-    </div>
-</section>
+    </content>
+</div>

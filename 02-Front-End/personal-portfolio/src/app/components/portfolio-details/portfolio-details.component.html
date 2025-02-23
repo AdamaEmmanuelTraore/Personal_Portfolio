@@ -1,21 +1,28 @@
-<section class="section" id="about">
-    <div class="container">
-        <div class="row">
-            <div>
-                <div class="content contentGroup">
-                    <h1 class="contentTitle"><b>{{ portfolioDetails.title }}</b></h1><br>
-                    <h3><b>Methode: </b>{{ portfolioDetails.methode }}</h3><br> <!-- Todo: Refact this line of code -->
-                    <h5><h3><b>Details:</b><br></h3>{{ portfolioDetails.objective }}</h5><br> <!-- Todo: Refact this line of code -->
-                    <div class="photo">
-                        <img src="{{ portfolioDetails.image_url }}" alt="Placeholder Photo">
-                    </div>
-                    <div class="content-sections">
-                        <div class="long-paragraph">
-                            {{ portfolioDetails.description }}
+<!-- ===== Start Portfolio Detail Section ===== -->
+<container class="container" [ngClass]="currentTheme">
+    <content class="content">
+        <div class="content__width">
+            <ul class="cards">
+                <li [ngClass]="currentTheme">
+                    <a class="card">
+                        <img [src]="portfolioDetails.image_url" class="card__image" [alt]="portfolioDetails.title" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <div class="card__header-text">
+                                    <h1 class="card__title"><b>{{ portfolioDetails.title }}</b></h1>
+                                    <h3><b>Methode: </b>{{ portfolioDetails.methode }}</h3>
+                                    <!-- Todo: Refact this line of code -->
+                                    <h3><b>Details:</b></h3>
+                                    <p class="details">{{ portfolioDetails.objective }}</p>
+                                    <!-- Todo: Refact this line of code -->
+                                </div>
+                            </div>
+                            <p class="card__description">{{ portfolioDetails.description }}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
-</section>
+    </content>
+</container>
+<!-- ===== End portfolio Detail Section ===== -->

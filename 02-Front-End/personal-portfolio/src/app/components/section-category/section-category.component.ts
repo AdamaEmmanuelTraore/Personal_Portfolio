@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SectionCategoryCommon } from 'src/app/common/section-category/section-category.common';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faHouseChimney, faUser, faBriefcase, faHeart, faComments } from '@fortawesome/free-solid-svg-icons'
@@ -10,17 +10,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./section-category.component.css']
 })
 export class SectionCategoryComponent implements OnInit {
-
-  sectionCategory: SectionCategoryCommon[] = [];
   faHouseChimney = faHouseChimney;
   faUser = faUser;
   faBriefcase = faBriefcase;
   faHeart = faHeart;
   faComments = faComments;
 
+  sections: SectionCategoryCommon[] = [];
+
   constructor(
-    private portfolioService: PortfolioService,
-    private route: ActivatedRoute
+    private portfolioService: PortfolioService
   ) { }
 
   ngOnInit(): void {
@@ -30,8 +29,7 @@ export class SectionCategoryComponent implements OnInit {
   public getAllSections(): void {
     this.portfolioService.getAllSectionCategory().subscribe(data => {
       console.log('Section category = ' + JSON.stringify(data));
-      this.sectionCategory = data;
+      this.sections = data;
     });
   }
-
 }

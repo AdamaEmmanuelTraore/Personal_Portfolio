@@ -1,227 +1,208 @@
 <!-- ===== About Section Start ===== -->
-<section class="about" id="about">
-    <div class="container">
-        <div class="section-title"> <!-- Riusare il componente anche in home -->
-            <h2>About Me</h2>
-        </div>
-        <div class="row">
-            <div class="about-content">
-                <div>
-                    <div class="about-text">
-                        <h3>{{ section.title }} <span>Software Engineer</span></h3>
-                        <p>{{ section.description }}</p>
+<div class="container">
+    <content class="content">
+        <div class="content__width">
+            <div>
+                <!-- DESCRIPTION -->
+                <h3>{{ section.title }} <span>Software Engineer</span></h3>
+                <p>{{ section.description }}</p>
+            </div>
+
+            <!-- INFO AND LANGUAGE -->
+            <div class="main-section">
+                <div class="sections">
+                    <h3 class="info">Info</h3>
+                    <div class="info-item">
+                        <ul class="infos">
+                            <li><b class="info__title">Profession: </b><span>Full-stack developer</span>
+                            </li>
+                            <li><b class="info__title">Email:</b>
+                                <span>adama.emmanuel.traore.11@gmail.com</span>
+                            </li>
+                            <li><b class="info__title">Phone: </b>
+                                <span>+41 78 261 76 60 / </span>
+                                <span>+39 342 304 3529</span>
+                            </li>
+                            <li><b class="info__title">Birthday:</b> <span>01 June 1998</span></li>
+                            <li><b class="info__title">City: </b>
+                                <span>1012 Lausanne, Switzerland / </span>
+                                <span>20138 Milan, Italy.</span>
+                            </li>
+                            <li><b class="info__title">Nationality:</b> <span>Italian / Ivorian</span></li>
+                            <li><b class="info__title">Website:</b> <span><b style="color: red;">Da
+                                        inserire!!!</b></span></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="main-section">
-                    <div class="sections left">
-                        <h3 class="title info">Info</h3> <!-- ALLINEARE AL CENTRO -->
-                        <div class="centered">
-                            <div class="info-item split left-info">
-                                <ul class="infos">
-                                    <li><b>Birthday:</b> <span>01 June 1998</span></li>
-                                    <li><b>Email:</b> <span>adama.emmanuel.traore.11@gmail.com</span></li>
-                                    <li><b>Nationality:</b> <span>Italian & Ivorian</span></li>
-                                    <li><b>Website:</b> <span><b style="color: red;">Da inserire!!!</b></span></li>
-                                </ul>
 
-                            </div>
+                <div class="sections">
+                    <h3 class="info">Language</h3>
+                    <div>
+                        <h5>French</h5>
+                        <div class="progress">
+                            <div class="progress-in" style="width: 100%;"></div>
+                            <div class="skill-percent">100%</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Italian</h5>
+                        <div class="progress">
+                            <div class="progress-in" style="width: 100%;"></div>
+                            <div class="skill-percent">100%</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>English</h5>
+                        <div class="progress">
+                            <div class="progress-in" style="width: 70%;"></div>
+                            <div class="skill-percent">70%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DOWNLOAD BUTTONS -->
+            <div class="download__button">
+                <div *ngFor="let cv of fileCv">
+                    <button class="btn" (click)="downloadFile(cv)">Download {{cv.name}}</button>
+                </div>
+            </div>
 
-                            <div class="info-item split right-info">
-                                <ul class="infos">
-                                    <li><b>Profession: </b><span>Full-stack developer</span></li>
-                                    <li><b>Phone: </b><br>
-                                        <span>+41 78 261 76 60</span><br>
-                                        <span>+39 342 304 3529</span>
-                                    </li>
-                                    <li><b>City: </b><br>
-                                        <span>1012 Lausanne, Switzerland.</span><br>
-                                        <span>20138 Milan, Italy.</span>
-                                    </li>
-                                </ul>
+            <!-- EDUCATION AND EXPERIENCE -->
+            <div class="education-experience">
+                <div class="education">
+                    <h3 class="about_title">Education</h3>
+                    <div class="cvs">
+                        <div>
+                            <div class="timeline shadow-dark">
+                                <div class="timeline-item" *ngFor="let academy of academyExperience">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-date">
+                                        {{ academy.start }} - {{ academy.end }}
+                                    </h3>
+                                    <h4 class="timeline-title">{{ academy.title }}</h4>
+                                    <h5 class="timeline-address"><i>{{ academy.address }}</i></h5>
+                                    <p class="timeline-text">{{ academy.description }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="experience">
+                    <h3 class="about_title">Experience</h3>
+                    <div class="cvs">
+                        <div>
+                            <div class="timeline shadow-dark">
+                                <div class="timeline-item" *ngFor="let work of workExperience">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-date">
+                                        {{ work.start }} - {{ work.end }}
+                                    </h3>
+                                    <h4 class="timeline-title">{{ work.title }}</h4>
+                                    <h5 class="timeline-address"><i>{{ work.address }}</i></h5>
+                                    <p class="timeline-text">{{ work.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="language sections right">
-                        <h3 class="title info">Language</h3> <!-- ALLINEARE AL CENTRO -->
+            <!-- SKILLS -->
+            <h2 class="about_title">Skills</h2>
+            <div class="skill-section">
+                <div class="skills">
+                    <div>
+                        <h3 class="about_title">Front-end</h3>
                         <div>
-                            <h5>French</h5>
+                            <h5>Angular 2+</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 95%;"></div>
+                                <div class="skill-percent">95%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>HTML / XML</h5>
                             <div class="progress">
                                 <div class="progress-in" style="width: 100%;"></div>
                                 <div class="skill-percent">100%</div>
                             </div>
                         </div>
                         <div>
-                            <h5>Italian</h5>
+                            <h5>CSS / SCSS</h5>
                             <div class="progress">
                                 <div class="progress-in" style="width: 100%;"></div>
                                 <div class="skill-percent">100%</div>
                             </div>
                         </div>
                         <div>
-                            <h5>English</h5>
+                            <h5>JavaScript / TypeScript</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 97%;"></div>
+                                <div class="skill-percent">97%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills">
+                    <div>
+                        <h3 class="about_title">Back-end</h3>
+                        <div>
+                            <h5>Java / Springboot / Hibernate / JPA</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 80%;"></div>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>NodeJS</h5>
                             <div class="progress">
                                 <div class="progress-in" style="width: 70%;"></div>
                                 <div class="skill-percent">70%</div>
                             </div>
                         </div>
-                    </div>
-
-                </div>
-
-
-
-                <!--
-                                    <div *ngIf="fileCv && fileCv.length > 0">
-                                        <div *ngFor="let cv of fileCv">
-                                            <div class="buttons download">
-                                                <a href="#" class="btn">Download {{cv.name}}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div *ngIf="!fileCv || fileCv.length === 0">
-                                        <p>Nessun CV disponibile</p>
-                                    </div>-->
-
-                <div class="education-experience">
-                    <div class="education">
-                        <h3 class="title">Education</h3>
-                        <div class="cvs">
-                            <div>
-                                <div class="timeline shadow-dark">
-                                    <!-- ===== timeline item ===== -->
-                                    <div class="timeline-item" *ngFor="let academy of academyExperience">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            {{ academy.start }} - {{ academy.end }}
-                                        </h3>
-                                        <h4 class="timeline-title">{{ academy.title }}</h4>
-                                        <h5 class="timeline-address"><i>{{ academy.address }}</i></h5>
-                                        <p class="timeline-text">{{ academy.description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <h3 class="title">Experience</h3>
-                        <div class="cvs">
-                            <div>
-                                <div class="timeline shadow-dark">
-                                    <!-- ===== timeline item ===== -->
-                                    <div class="timeline-item" *ngFor="let work of workExperience">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            {{ work.start }} - {{ work.end }}
-                                        </h3>
-                                        <h4 class="timeline-title">{{ work.title }}</h4>
-                                        <h5 class="timeline-address"><i>{{ work.address }}</i></h5>
-                                        <p class="timeline-text">{{ work.description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="title">Skills</h2>
-                </div>
-                <div class="skill-section">
-                    <div class="skills">
                         <div>
-                            <h3 class="title">Front-end</h3>
-                            <div>
-                                <h5>Angular 2+</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 95%;"></div>
-                                    <div class="skill-percent">95%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>HTML / XML</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 100%;"></div>
-                                    <div class="skill-percent">100%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>CSS / SCSS</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 100%;"></div>
-                                    <div class="skill-percent">100%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>JavaScript / TypeScript</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 97%;"></div>
-                                    <div class="skill-percent">97%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
-                        <div>
-                            <h3 class="title">Back-end</h3> <!-- ALLINEARE AL CENTRO -->
-                            <div>
-                                <h5>Java / Springboot / Hibernate / JPA</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 80%;"></div>
-                                    <div class="skill-percent">80%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>NodeJS</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 70%;"></div>
-                                    <div class="skill-percent">70%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>Golang</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 1%;"></div>
-                                    <div class="skill-percent">1%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills"> <!-- AGGIUNGERE UN MARGIN-LEFT -->
-                        <div>
-                            <h3 class="title">Database</h3> <!-- ALLINEARE AL CENTRO -->
-                            <div>
-                                <h5>MySQL</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 90%;"></div>
-                                    <div class="skill-percent">90%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>MySQL Workbench</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 100%;"></div>
-                                    <div class="skill-percent">100%</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5>HEIDI</h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 68%;"></div>
-                                    <div class="skill-percent">68%</div>
-                                </div>
+                            <h5>Golang</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 1%;"></div>
+                                <div class="skill-percent">1%</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="download-button">
-                    <div class="buttons" *ngFor="let cv of fileCv">
-                        <a class="btn" (click)="downloadFile(cv)">Download {{cv.name}}</a>
+                <div class="skills">
+                    <div>
+                        <h3 class="about_title">Database</h3>
+                        <div>
+                            <h5>MySQL</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 90%;"></div>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>MySQL Workbench</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 100%;"></div>
+                                <div class="skill-percent">100%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5>HEIDI</h5>
+                            <div class="progress">
+                                <div class="progress-in" style="width: 68%;"></div>
+                                <div class="skill-percent">68%</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="buttons-about-contact">
-                    <a routerLink="/section-category/CONTACT" data-section-index="2" class="btn hire-me">Hire Me</a>
-                    <!-- ALLINEARE AL CENTRO/IN BASSO E FARLO GRANDE -->
                 </div>
             </div>
+
+            <!-- GO TO NEXT SECTION BTN -->
+            <div class="buttons__about__portfolio">
+                <button class="btn" routerLink="/section-category/PORTFOLIO" data-section-index="2">Look at my
+                    projects</button>
+            </div>
         </div>
-    </div>
-</section>
+    </content>
+</div>
 <!-- ===== About Section End ===== -->

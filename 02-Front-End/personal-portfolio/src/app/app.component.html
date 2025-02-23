@@ -7,7 +7,7 @@
     <mat-sidenav class="sideNav" #sidenav mode="side" opened="false">
       <!-- Add your sidebar content here -->
       <mat-nav-list>
-        <app-section-category (click)="closeSidebar()"></app-section-category>
+        <app-section-category (click)="closeSidebar()" />
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="sidebar">
@@ -18,9 +18,13 @@
   </mat-sidenav-container>
   <!-- ===== END MENU SIDEBAR ===== -->
 
+  <!-- ===== START TOP CONTENT ===== -->
+  <app-header />
+  <!-- ===== END TOP CONTENT ===== -->
+
   <!-- ===== MAIN CONTENT START ===== -->
   <div class="main-content" (click)="closeSidebar()">
-    <router-outlet></router-outlet>
+    <router-outlet />
   </div>
   <!-- ===== MAIN CONTENT END ===== -->
 

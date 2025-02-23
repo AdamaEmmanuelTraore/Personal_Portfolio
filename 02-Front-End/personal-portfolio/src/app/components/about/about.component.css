@@ -9,74 +9,43 @@
 
     .main-section {
         /*    display: flex;
-        justify-content: space-evenly;
+        justify: space-evenly;
         /* Distribuisce le sezioni con spazio equidistante */
         display: flex;
         justify-content: space-between;
         /* Distribuisce le sezioni uniformemente */
-        gap: 20px;
+        margin-top: 5%;
     }
 
+    .content {
+        margin-top: 20vh;
+    }
+
+    /*
+     .container {
+        height: 205vh;
+    }
+*/
+/*
+    .content {
+        min-height: 265vh;
+    }
+*/
     .sections {
-        /*
-        height: 100%;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;*/
         flex: 1;
-        /* Ogni sezione occupa la stessa quantità di spazio */
-        padding: 20px;
-        /* Aggiungi padding per una migliore leggibilità */
-        box-sizing: border-box;
-        /* Assicura che il padding non influisca sulla larghezza totale */
     }
 
-    .info {
-        display: flex;
-    }
-
-    .left {
-        left: 0;
-    }
-
-    .right {
-        right: 0;
-        width: 50%;
-    }
-
+    /*
     .split {
-        height: 100%;
-        width: fit-content;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;
+        text-align: left;
     }
-
-    .left-info {
-        /*    left: 0;
-        min-width: fit-content;*/
-        display: inline-grid;
-        justify-content: center;
-        margin-right: 1rem;
-        min-width: fit-content;
-    }
-
-    .right-info {
-        /*    right: 0;
-        min-width: fit-content;*/
-        display: inline-grid;
-        justify-content: center;
-        width: max-content;
-    }
-
+*/
+    /*
     .centered {
-        display: flex;
-        justify-content: space-between;
-        /*    flex-wrap: nowrap;*/
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-
+*/
     /*
     .sections {
         flex: 1;
@@ -85,81 +54,82 @@
         box-sizing: border-box;
     }
 */
-    .about .row {
+    .row {
         padding: 12%;
     }
 
-    /*
-    .about .about-content .info-item {
-        flex: 1;
-        padding-right: 7%;
+    .info {
+        text-align: center;
     }
-*/
-    .about .about-content .about-text h3 {
+
+
+    .info-item {
+        padding: 1.2rem;
+    }
+
+    h3 {
         font-size: 24px;
         margin-bottom: 15px;
         font-weight: 700;
         color: var(--text-black-900);
     }
 
-    .about .about-content .about-text h3 span {
+    h3 span {
         color: var(--skin-color);
     }
 
-    .about .about-content .about-text p {
+    p {
         font-size: 15px;
         line-height: 30px;
+        text-align: justify;
     }
 
     /*
-    .about .about-content .info-item p {
+      .info-item p {
         padding: 10px 0;
         font-size: 16px;
         color: var(--text-black-900);
         border-bottom: 1px solid var(--bg-black-50);
     }
 */
-    .about .about-content .buttons {
-        margin-top: 30px;
-    }
-
-    .about .about-content .buttons .btn {
-        margin-top: 10px;
-        cursor: pointer;
-    }
 
     .download {
         margin: 40px;
     }
 
     .infos {
-        list-style-type: circle;
-        /* Assicurati che il tipo di lista sia impostato */
-        padding-left: 20px;
-        /* Aggiungi un padding per far spazio al marker */
-        margin: 10px 0;
-        /* Eventuale margine per distanziare gli elementi */
+        padding: 0;
     }
 
+    ul {
+        list-style: circle;
+    }
 
-    .about .title .info {
+    /*
+    .title .info {
         display: flex;
+    }
+*/
+    .info__title {
+        font-size: large;
     }
 
     /* ===== LANGUAGES ===== */
-    .about .about-content .language {
-        margin-right: 5rem;
+    /*
+      .language {
+        padding: 1rem;
     }
-
-    .about .about-content .language h5 {
+*/
+    h5 {
         line-height: 40px;
         font-weight: 600;
         font-size: 16px;
         color: var(--text-black-900);
         text-transform: capitalize;
+        font-size: large;
     }
 
-    .about .about-content .language .progress {
+    .progress {
         background-color: var(--bg-black-50);
         height: 7px;
         border-radius: 4px;
@@ -167,7 +137,7 @@
         position: relative;
     }
 
-    .about .about-content .language .progress .progress-in {
+    .progress .progress-in {
         position: absolute;
         left: 0;
         top: 0;
@@ -176,7 +146,7 @@
         background-color: var(--skin-color);
     }
 
-    .about .about-content .language .skill-percent {
+    .skill-percent {
         position: absolute;
         right: 0;
         color: var(--text-black-900);
@@ -186,34 +156,39 @@
     }
 
     /* ===== EDUCATION & EXPERIENCE ===== */
-    .about .education-experience {
+    .education-experience {
         display: flex;
-        flex-wrap: wrap;
-        align-content: center;
+        flex-wrap: nowrap;
+        max-width: 1500px;
+        width: 100%;
+        gap: 10px;
     }
 
-    .about .about-content .education,
-    .about .about-content .experience {
-        flex: 0 0 50%;
+    .education,
+    .experience {
         max-width: 50%;
-        margin-top: 30px;
+        margin-top: 5%;
     }
 
-    .about .about-content h2.title {
+
+    h2.about_title {
         font-size: 30px;
         font-weight: 700;
         color: var(--text-black-900);
+        text-align: center;
+        margin-top: 5%;
+        padding: 0;
     }
 
-    .about .about-content h3.title {
+    h3.about_title {
         font-size: 24px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-weight: 700;
         color: var(--text-black-900);
         text-align: center;
     }
 
-    .about .about-content .timeline {
+    .timeline {
         background-color: var(--bg-black-100);
         padding: 30px 15px;
         border: 1px solid var(--bg-black-50);
@@ -222,17 +197,17 @@
         position: relative;
     }
 
-    .about .about-content .timeline .timeline-item {
+    .timeline .timeline-item {
         position: relative;
         padding-left: 37px;
         padding-bottom: 50px;
     }
 
-    .about .about-content .timeline .timeline-item:last-child {
+    .timeline .timeline-item:last-child {
         padding-bottom: 0;
     }
 
-    .about .about-content .timeline .timeline-item::before {
+    .timeline .timeline-item::before {
         content: '';
         width: 1px;
         position: absolute;
@@ -242,7 +217,7 @@
         background-color: var(--skin-color);
     }
 
-    .about .about-content .timeline .circle-dot {
+    .timeline .circle-dot {
         position: absolute;
         left: 0;
         top: 0;
@@ -252,14 +227,14 @@
         background-color: var(--skin-color);
     }
 
-    .about .about-content .timeline .timeline-date {
+    .timeline .timeline-date {
         font-weight: 400;
         font-size: 14px;
         margin-bottom: 12px;
         color: var(--text-black-700);
     }
 
-    .about .about-content .timeline .timeline-title {
+    .timeline .timeline-title {
         font-weight: 700;
         font-size: 18px;
         margin-bottom: 15px;
@@ -267,7 +242,7 @@
         color: var(--text-black-900);
     }
 
-    .about .about-content .timeline .timeline-address {
+    .timeline .timeline-address {
         font-weight: 300;
         font-size: 15px;
         margin-bottom: 15px;
@@ -275,25 +250,24 @@
         color: var(--text-black-900);
     }
 
-    .about .about-content .timeline .timeline-text {
+    .timeline .timeline-text {
         line-height: 25px;
         font-size: 16px;
-        text-align: justify;
+        /*        text-align: justify;*/
         color: var(--text-black-700);
     }
 
     /* ===== SKILLS ===== */
-    .about .about-content .skill-section {
+    .skill-section {
         display: flex;
         justify-content: space-between;
     }
 
-    .about .about-content .skills {
+    .skills {
         flex: 0 0 30%;
-        margin-top: 40px;
     }
 
-    .about .about-content .skills h5 {
+    .skills h5 {
         line-height: 40px;
         font-weight: 600;
         font-size: 16px;
@@ -301,7 +275,7 @@
         text-transform: capitalize;
     }
 
-    .about .about-content .skills .progress {
+    .skills .progress {
         background-color: var(--bg-black-50);
         height: 7px;
         border-radius: 4px;
@@ -309,11 +283,12 @@
         position: relative;
     }
 
-    .about .about-content .skills {
+    /*
+      .skills {
         margin-bottom: 25px;
     }
-
-    .about .about-content .skills .progress .progress-in {
+*/
+    .skills .progress .progress-in {
         position: absolute;
         left: 0;
         top: 0;
@@ -322,7 +297,7 @@
         background-color: var(--skin-color);
     }
 
-    .about .about-content .skills .skill-percent {
+    .skills .skill-percent {
         position: absolute;
         right: 0;
         color: var(--text-black-900);
@@ -332,33 +307,35 @@
     }
 
     /* ===== BUTTON ===== */
-
-    .buttons-about-contact {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 25%);
-    }
-
-    .hire-me {
-        margin: 40px;
-    }
-
+    /*
     .cvs {
         margin-right: 0.7rem;
+    }
+*/
+    .download__button {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+
+    .buttons__about__portfolio {
+        display: flex;
+        justify-content: center;
+        margin: 5%;
     }
 }
 
 /* ================================================== Tablet style ================================================== */
 @media (min-width: 710px) and (max-width: 860px) {
 
-    .about .row {
+    .row {
         margin: auto;
         width: 85%;
         top: 25vh;
     }
 
     /*
-    .about .about-content .personal-info .info-item p {
+      .personal-info .info-item p {
         width: 12.4rem;
         font-weight: 600;
         padding: 10px 0;
@@ -371,7 +348,7 @@
         margin-right: 1rem;
     }
 
-    .about .about-content .skills {
+    .skills {
         flex: 0 0 70%;
         margin-bottom: 40px;
         margin-left: 15%;
@@ -382,7 +359,7 @@
 /* ================================================== Phone style ================================================== */
 @media (max-width: 709px) {
 
-    .about .row {
+    .row {
         margin: auto;
         width: 85%;
         top: 25vh;

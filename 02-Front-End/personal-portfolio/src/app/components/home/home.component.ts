@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { SectionCommon } from 'src/app/common/section/section.common';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import Typed from 'typed.js'; // Typed.js library
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private portfolioService: PortfolioService,
     // ACTIVATEDROUTE VIENE USATO PER ACCEDERE A UN DETERMINATO ID.
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit(): void {
